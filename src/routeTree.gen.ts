@@ -10,22 +10,40 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as PracticeAreasRouteImport } from './routes/practice-areas'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedCalendarRouteImport } from './routes/_authenticated/calendar'
+import { Route as AuthenticatedDocumentsRouteImport } from './routes/_authenticated/documents'
+import { Route as AuthenticatedPortalRouteImport } from './routes/_authenticated/portal'
+import { Route as AuthenticatedSecurityRouteImport } from './routes/_authenticated/security'
 import { Route as TeamIndexRouteImport } from './routes/team.index'
 import { Route as TeamSlugRouteImport } from './routes/team.$slug'
+import { Route as AuthenticatedCasesIndexRouteImport } from './routes/_authenticated/cases.index'
+import { Route as AuthenticatedCasesCaseIdRouteImport } from './routes/_authenticated/cases.$caseId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookRoute = BookRouteImport.update({
@@ -48,6 +66,31 @@ const PracticeAreasRoute = PracticeAreasRouteImport.update({
   path: '/practice-areas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedCalendarRoute = AuthenticatedCalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedDocumentsRoute = AuthenticatedDocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedPortalRoute = AuthenticatedPortalRouteImport.update({
+  id: '/portal',
+  path: '/portal',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedSecurityRoute = AuthenticatedSecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const TeamIndexRoute = TeamIndexRouteImport.update({
   id: '/team/',
   path: '/team/',
@@ -58,74 +101,137 @@ const TeamSlugRoute = TeamSlugRouteImport.update({
   path: '/team/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedCasesIndexRoute = AuthenticatedCasesIndexRouteImport.update({
+  id: '/cases/',
+  path: '/cases/',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedCasesCaseIdRoute =
+  AuthenticatedCasesCaseIdRouteImport.update({
+    id: '/cases/$caseId',
+    path: '/cases/$caseId',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/insights': typeof InsightsRoute
   '/practice-areas': typeof PracticeAreasRoute
+  '/admin': typeof AuthenticatedAdminRoute
+  '/calendar': typeof AuthenticatedCalendarRoute
+  '/documents': typeof AuthenticatedDocumentsRoute
+  '/portal': typeof AuthenticatedPortalRoute
+  '/security': typeof AuthenticatedSecurityRoute
   '/team/$slug': typeof TeamSlugRoute
   '/team/': typeof TeamIndexRoute
+  '/cases/$caseId': typeof AuthenticatedCasesCaseIdRoute
+  '/cases/': typeof AuthenticatedCasesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/insights': typeof InsightsRoute
   '/practice-areas': typeof PracticeAreasRoute
+  '/admin': typeof AuthenticatedAdminRoute
+  '/calendar': typeof AuthenticatedCalendarRoute
+  '/documents': typeof AuthenticatedDocumentsRoute
+  '/portal': typeof AuthenticatedPortalRoute
+  '/security': typeof AuthenticatedSecurityRoute
   '/team/$slug': typeof TeamSlugRoute
   '/team': typeof TeamIndexRoute
+  '/cases/$caseId': typeof AuthenticatedCasesCaseIdRoute
+  '/cases': typeof AuthenticatedCasesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/insights': typeof InsightsRoute
   '/practice-areas': typeof PracticeAreasRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
+  '/_authenticated/calendar': typeof AuthenticatedCalendarRoute
+  '/_authenticated/documents': typeof AuthenticatedDocumentsRoute
+  '/_authenticated/portal': typeof AuthenticatedPortalRoute
+  '/_authenticated/security': typeof AuthenticatedSecurityRoute
   '/team/$slug': typeof TeamSlugRoute
   '/team/': typeof TeamIndexRoute
+  '/_authenticated/cases/$caseId': typeof AuthenticatedCasesCaseIdRoute
+  '/_authenticated/cases/': typeof AuthenticatedCasesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/auth'
     | '/book'
     | '/contact'
     | '/insights'
     | '/practice-areas'
+    | '/admin'
+    | '/calendar'
+    | '/documents'
+    | '/portal'
+    | '/security'
     | '/team/$slug'
     | '/team/'
+    | '/cases/$caseId'
+    | '/cases/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/auth'
     | '/book'
     | '/contact'
     | '/insights'
     | '/practice-areas'
+    | '/admin'
+    | '/calendar'
+    | '/documents'
+    | '/portal'
+    | '/security'
     | '/team/$slug'
     | '/team'
+    | '/cases/$caseId'
+    | '/cases'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/about'
+    | '/auth'
     | '/book'
     | '/contact'
     | '/insights'
     | '/practice-areas'
+    | '/_authenticated/admin'
+    | '/_authenticated/calendar'
+    | '/_authenticated/documents'
+    | '/_authenticated/portal'
+    | '/_authenticated/security'
     | '/team/$slug'
     | '/team/'
+    | '/_authenticated/cases/$caseId'
+    | '/_authenticated/cases/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
+  AuthRoute: typeof AuthRoute
   BookRoute: typeof BookRoute
   ContactRoute: typeof ContactRoute
   InsightsRoute: typeof InsightsRoute
@@ -143,11 +249,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book': {
@@ -178,6 +298,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PracticeAreasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/calendar': {
+      id: '/_authenticated/calendar'
+      path: '/calendar'
+      fullPath: '/calendar'
+      preLoaderRoute: typeof AuthenticatedCalendarRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/documents': {
+      id: '/_authenticated/documents'
+      path: '/documents'
+      fullPath: '/documents'
+      preLoaderRoute: typeof AuthenticatedDocumentsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/portal': {
+      id: '/_authenticated/portal'
+      path: '/portal'
+      fullPath: '/portal'
+      preLoaderRoute: typeof AuthenticatedPortalRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/security': {
+      id: '/_authenticated/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof AuthenticatedSecurityRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/team/': {
       id: '/team/'
       path: '/team'
@@ -192,12 +347,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TeamSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/cases/': {
+      id: '/_authenticated/cases/'
+      path: '/cases'
+      fullPath: '/cases/'
+      preLoaderRoute: typeof AuthenticatedCasesIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/cases/$caseId': {
+      id: '/_authenticated/cases/$caseId'
+      path: '/cases/$caseId'
+      fullPath: '/cases/$caseId'
+      preLoaderRoute: typeof AuthenticatedCasesCaseIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+  AuthenticatedCalendarRoute: typeof AuthenticatedCalendarRoute
+  AuthenticatedDocumentsRoute: typeof AuthenticatedDocumentsRoute
+  AuthenticatedPortalRoute: typeof AuthenticatedPortalRoute
+  AuthenticatedSecurityRoute: typeof AuthenticatedSecurityRoute
+  AuthenticatedCasesCaseIdRoute: typeof AuthenticatedCasesCaseIdRoute
+  AuthenticatedCasesIndexRoute: typeof AuthenticatedCasesIndexRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+  AuthenticatedCalendarRoute: AuthenticatedCalendarRoute,
+  AuthenticatedDocumentsRoute: AuthenticatedDocumentsRoute,
+  AuthenticatedPortalRoute: AuthenticatedPortalRoute,
+  AuthenticatedSecurityRoute: AuthenticatedSecurityRoute,
+  AuthenticatedCasesCaseIdRoute: AuthenticatedCasesCaseIdRoute,
+  AuthenticatedCasesIndexRoute: AuthenticatedCasesIndexRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
+  AuthRoute: AuthRoute,
   BookRoute: BookRoute,
   ContactRoute: ContactRoute,
   InsightsRoute: InsightsRoute,
