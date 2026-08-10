@@ -53,7 +53,13 @@ function CasesPage() {
   const createCase = useMutation({
     mutationFn: async (payload: z.infer<typeof caseSchema>) => {
       const { error } = await supabase.from("cases").insert({
-        ...payload,
+        case_number: payload.case_number,
+        title: payload.title,
+        status: payload.status,
+        practice_area: payload.practice_area ?? null,
+        court: payload.court ?? null,
+        description: payload.description ?? null,
+        client_id: payload.client_id ?? null,
         lead_lawyer_id: me?.user.id ?? null,
       });
       if (error) throw error;
