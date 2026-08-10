@@ -84,6 +84,13 @@ export function SiteHeader() {
             </button>
           </div>
 
+          <Link
+            to="/portal"
+            className="hidden text-sm text-navy-foreground/80 transition-colors hover:text-gold md:inline"
+          >
+            Client Portal
+          </Link>
+
           <Button asChild variant="gold" className="hidden md:inline-flex">
             <Link to="/book">{t("cta.book")}</Link>
           </Button>
