@@ -17,6 +17,8 @@ import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as PracticeAreasRouteImport } from './routes/practice-areas'
+import { Route as AuthenticatedCalendarRouteImport } from './routes/_authenticated/calendar'
+import { Route as AuthenticatedDocumentsRouteImport } from './routes/_authenticated/documents'
 import { Route as AuthenticatedPortalRouteImport } from './routes/_authenticated/portal'
 import { Route as TeamIndexRouteImport } from './routes/team.index'
 import { Route as TeamSlugRouteImport } from './routes/team.$slug'
@@ -62,6 +64,16 @@ const PracticeAreasRoute = PracticeAreasRouteImport.update({
   path: '/practice-areas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedCalendarRoute = AuthenticatedCalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedDocumentsRoute = AuthenticatedDocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedPortalRoute = AuthenticatedPortalRouteImport.update({
   id: '/portal',
   path: '/portal',
@@ -97,6 +109,8 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/insights': typeof InsightsRoute
   '/practice-areas': typeof PracticeAreasRoute
+  '/calendar': typeof AuthenticatedCalendarRoute
+  '/documents': typeof AuthenticatedDocumentsRoute
   '/portal': typeof AuthenticatedPortalRoute
   '/team/$slug': typeof TeamSlugRoute
   '/team/': typeof TeamIndexRoute
@@ -111,6 +125,8 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/insights': typeof InsightsRoute
   '/practice-areas': typeof PracticeAreasRoute
+  '/calendar': typeof AuthenticatedCalendarRoute
+  '/documents': typeof AuthenticatedDocumentsRoute
   '/portal': typeof AuthenticatedPortalRoute
   '/team/$slug': typeof TeamSlugRoute
   '/team': typeof TeamIndexRoute
@@ -127,6 +143,8 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/insights': typeof InsightsRoute
   '/practice-areas': typeof PracticeAreasRoute
+  '/_authenticated/calendar': typeof AuthenticatedCalendarRoute
+  '/_authenticated/documents': typeof AuthenticatedDocumentsRoute
   '/_authenticated/portal': typeof AuthenticatedPortalRoute
   '/team/$slug': typeof TeamSlugRoute
   '/team/': typeof TeamIndexRoute
@@ -143,6 +161,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/insights'
     | '/practice-areas'
+    | '/calendar'
+    | '/documents'
     | '/portal'
     | '/team/$slug'
     | '/team/'
@@ -157,6 +177,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/insights'
     | '/practice-areas'
+    | '/calendar'
+    | '/documents'
     | '/portal'
     | '/team/$slug'
     | '/team'
@@ -172,6 +194,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/insights'
     | '/practice-areas'
+    | '/_authenticated/calendar'
+    | '/_authenticated/documents'
     | '/_authenticated/portal'
     | '/team/$slug'
     | '/team/'
@@ -250,6 +274,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PracticeAreasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/calendar': {
+      id: '/_authenticated/calendar'
+      path: '/calendar'
+      fullPath: '/calendar'
+      preLoaderRoute: typeof AuthenticatedCalendarRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/documents': {
+      id: '/_authenticated/documents'
+      path: '/documents'
+      fullPath: '/documents'
+      preLoaderRoute: typeof AuthenticatedDocumentsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/portal': {
       id: '/_authenticated/portal'
       path: '/portal'
@@ -289,12 +327,16 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedCalendarRoute: typeof AuthenticatedCalendarRoute
+  AuthenticatedDocumentsRoute: typeof AuthenticatedDocumentsRoute
   AuthenticatedPortalRoute: typeof AuthenticatedPortalRoute
   AuthenticatedCasesCaseIdRoute: typeof AuthenticatedCasesCaseIdRoute
   AuthenticatedCasesIndexRoute: typeof AuthenticatedCasesIndexRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedCalendarRoute: AuthenticatedCalendarRoute,
+  AuthenticatedDocumentsRoute: AuthenticatedDocumentsRoute,
   AuthenticatedPortalRoute: AuthenticatedPortalRoute,
   AuthenticatedCasesCaseIdRoute: AuthenticatedCasesCaseIdRoute,
   AuthenticatedCasesIndexRoute: AuthenticatedCasesIndexRoute,
