@@ -8,7 +8,8 @@ export const FIRM = {
   phone: "+251 11 555 0184",
   whatsapp: "+251911223344",
   email: "info@arayalaw.et",
-  address: "Bole Road, Nova Tower, 7th Floor, Addis Ababa, Ethiopia",
+  address:
+    "Bole Megenagna Road, near Imperial, Sami Building, 5th Floor, Addis Ababa, Ethiopia",
   hours: "Monday – Friday, 8:30 AM – 5:30 PM · Saturday by appointment",
 };
 
