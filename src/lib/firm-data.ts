@@ -5,9 +5,9 @@ import lawyer3 from "@/assets/lawyer-3.jpg";
 export const FIRM = {
   name: "Araya Law Office",
   tagline: "Justice. Integrity. Results.",
-  phone: "+251 11 555 0184",
-  whatsapp: "+251911223344",
-  email: "info@arayalaw.et",
+  phone: "+251 923 771 883",
+  whatsapp: "+251923771883",
+  email: "info@arayalawoffice.com",
   address:
     "Bole Megenagna Road, near Imperial, Sami Building, 5th Floor, Addis Ababa, Ethiopia",
   hours: "Monday – Friday, 8:30 AM – 5:30 PM · Saturday by appointment",
