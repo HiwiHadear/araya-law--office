@@ -30,16 +30,23 @@ export function PortalShell({ children }: { children: ReactNode }) {
     <div className="bg-muted/40">
       <div className="border-b border-border bg-navy text-navy-foreground">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 lg:px-8">
-          <div>
-            <p className="eyebrow text-gold/80">Secure Client & Practice Portal</p>
-            <h1 className="font-serif text-2xl leading-tight">
-              {me?.profile?.full_name ?? me?.user.email ?? "Welcome"}
-            </h1>
-            <p className="mt-1 text-xs text-navy-foreground/70">
-              {me?.roles.length
-                ? me.roles.map((r) => ROLE_LABELS[r]).join(" · ")
-                : "No role assigned yet"}
-            </p>
+          <div className="flex items-center gap-4">
+            <img
+              src={arayaLogo.url}
+              alt="Araya Law Office seal"
+              className="h-12 w-12 shrink-0 object-contain"
+            />
+            <div>
+              <p className="eyebrow text-gold/80">Secure Client & Practice Portal</p>
+              <h1 className="font-serif text-2xl leading-tight">
+                {me?.profile?.full_name ?? me?.user.email ?? "Welcome"}
+              </h1>
+              <p className="mt-1 text-xs text-navy-foreground/70">
+                {me?.roles.length
+                  ? me.roles.map((r) => ROLE_LABELS[r]).join(" · ")
+                  : "No role assigned yet"}
+              </p>
+            </div>
           </div>
           <Button
             variant="outline"
