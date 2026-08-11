@@ -1,5 +1,6 @@
 import { Clock, User } from "lucide-react";
 
+import arayaLogo from "@/assets/araya-logo.png.asset.json";
 import { ARTICLES } from "@/lib/firm-data";
 
 export function InsightsGrid({ limit }: { limit?: number }) {
@@ -9,8 +10,17 @@ export function InsightsGrid({ limit }: { limit?: number }) {
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {items.map((a) => (
         <article key={a.slug} className="group flex flex-col border border-border bg-background">
-          <div className="flex h-40 items-end bg-gradient-navy p-6">
-            <span className="eyebrow bg-gold px-2.5 py-1 text-gold-foreground">{a.category}</span>
+          <div className="relative flex h-40 items-end overflow-hidden bg-gradient-navy p-6">
+            <img
+              src={arayaLogo.url}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              className="pointer-events-none absolute -right-4 -top-4 h-32 w-32 object-contain opacity-15"
+            />
+            <span className="relative eyebrow bg-gold px-2.5 py-1 text-gold-foreground">
+              {a.category}
+            </span>
           </div>
           <div className="flex flex-1 flex-col p-7">
             <p className="eyebrow text-muted-foreground">{a.date}</p>
