@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 
+import arayaLogo from "@/assets/araya-logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { ROLE_LABELS, useCurrentUser, useSignOut } from "@/lib/auth";
 
