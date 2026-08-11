@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Linkedin, Mail, MapPin, Phone, Scale, Twitter } from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
+import arayaLogo from "@/assets/araya-logo.png.asset.json";
 import { FIRM } from "@/lib/firm-data";
 import { useLang } from "@/lib/i18n";
 
@@ -13,9 +14,11 @@ export function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 shrink-0 place-items-center border border-gold/50">
-                <Scale className="h-5 w-5 text-gold" aria-hidden="true" />
-              </span>
+              <img
+                src={arayaLogo.url}
+                alt="Araya Law Office seal"
+                className="h-11 w-11 shrink-0 object-contain"
+              />
               <span className="font-serif text-lg">{t("hero.firm")}</span>
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-navy-foreground/70">

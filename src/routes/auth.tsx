@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { Scale } from "lucide-react";
+import arayaLogo from "@/assets/araya-logo.png.asset.json";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -126,9 +126,11 @@ function AuthPage() {
       <div className="mx-auto max-w-md px-5">
         <div className="border border-border bg-background p-8 shadow-elegant">
           <div className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center border border-gold/60">
-              <Scale className="h-5 w-5 text-gold" aria-hidden="true" />
-            </span>
+            <img
+              src={arayaLogo.url}
+              alt="Araya Law Office seal"
+              className="h-11 w-11 shrink-0 object-contain"
+            />
             <div>
               <p className="eyebrow text-gold">Secure Portal</p>
               <h1 className="font-serif text-2xl leading-tight">Araya Law Office</h1>
