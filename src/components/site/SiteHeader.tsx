@@ -154,11 +154,20 @@ export function SiteHeader() {
                   አማ
                 </button>
               </div>
-              <Button asChild variant="gold">
-                <Link to="/book" onClick={() => setOpen(false)}>
-                  {t("cta.book")}
-                </Link>
-              </Button>
+              <div className="flex items-center gap-3">
+                <a
+                  href={`tel:${FIRM.phone.replace(/\s/g, "")}`}
+                  aria-label={`Call ${FIRM.phone}`}
+                  className="grid h-9 w-9 place-items-center border border-navy-foreground/20 text-navy-foreground/80 transition-colors hover:border-gold hover:text-gold"
+                >
+                  <Phone className="h-4 w-4" />
+                </a>
+                <Button asChild variant="gold">
+                  <Link to="/book" onClick={() => setOpen(false)}>
+                    {t("cta.book")}
+                  </Link>
+                </Button>
+              </div>
             </div>
           </nav>
         </div>
