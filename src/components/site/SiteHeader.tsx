@@ -95,6 +95,14 @@ export function SiteHeader() {
             Client Portal
           </Link>
 
+          <a
+            href={`tel:${FIRM.phone.replace(/\s/g, "")}`}
+            aria-label={`Call ${FIRM.phone}`}
+            className="grid h-9 w-9 place-items-center border border-navy-foreground/20 text-navy-foreground/80 transition-colors hover:border-gold hover:text-gold"
+          >
+            <Phone className="h-4 w-4" />
+          </a>
+
           <Button asChild variant="gold" className="hidden md:inline-flex">
             <Link to="/book">{t("cta.book")}</Link>
           </Button>
