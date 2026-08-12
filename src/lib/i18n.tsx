@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
 
-type Lang = "en" | "am";
+type Lang = "en" | "am" | "zh";
 
 const DICT = {
   en: {
@@ -20,6 +20,17 @@ const DICT = {
     "hero.trust": "Confidentiality • Professionalism • Client-Focused Representation",
     "footer.tagline": "Professional legal services you can trust.",
     "menu": "Menu",
+    "portal": "Client Portal",
+    "attorneys": "Attorneys & Legal Advisors",
+    "footer.navigation": "Navigation",
+    "footer.legal": "Legal",
+    "footer.contact": "Contact",
+    "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms of Use",
+    "footer.disclaimer": "Disclaimer",
+    "footer.confidentiality": "Confidentiality Policy",
+    "footer.copyright": "© 2026 Araya Law Office. All rights reserved.",
+    "footer.notice": "Information on this website is general and does not constitute legal advice.",
   },
   am: {
     "nav.home": "መግቢያ",
@@ -38,6 +49,46 @@ const DICT = {
     "hero.trust": "ምስጢራዊነት • ሙያዊነት • በደንበኛ ላይ ያተኮረ ውክልና",
     "footer.tagline": "ሊታመን የሚችል ሙያዊ የሕግ አገልግሎት።",
     "menu": "ማውጫ",
+    "portal": "የደንበኛ ፖርታል",
+    "attorneys": "የሕግ ጠበቆች እና አማካሪዎች",
+    "footer.navigation": "ዳሰሳ",
+    "footer.legal": "ሕጋዊ",
+    "footer.contact": "አግኙን",
+    "footer.privacy": "የግላዊነት ፖሊሲ",
+    "footer.terms": "የአጠቃቀም ውሎች",
+    "footer.disclaimer": "ውክልና",
+    "footer.confidentiality": "የምስጢራዊነት ፖሊሲ",
+    "footer.copyright": "© 2026 አራያ የሕግ ጽሕፈት ቤት። መብቱ በሕግ የተጠበቀ ነው።",
+    "footer.notice": "በዚህ ድር ጣቢያ ላይ ያሉ መረጃዎች አጠቃላይ እና የሕግ አማካሪነት አይሆኑም።",
+  },
+  zh: {
+    "nav.home": "首页",
+    "nav.about": "关于我们",
+    "nav.practice": "业务领域",
+    "nav.team": "律师团队",
+    "nav.insights": "法律资讯",
+    "nav.contact": "联系我们",
+    "cta.book": "预约咨询",
+    "cta.bookLong": "预约法律咨询",
+    "cta.practice": "我们的业务领域",
+    "hero.firm": "阿拉亚律师事务所",
+    "hero.tagline": "公正 · 诚信 · 成果",
+    "hero.lead":
+      "为个人、企业和组织提供专业法律代理与值得信赖的法律咨询服务。",
+    "hero.trust": "保密性 · 专业性 · 以客户为中心",
+    "footer.tagline": "您可以信赖的专业法律服务。",
+    "menu": "菜单",
+    "portal": "客户门户",
+    "attorneys": "律师与法律顾问",
+    "footer.navigation": "导航",
+    "footer.legal": "法律条款",
+    "footer.contact": "联系我们",
+    "footer.privacy": "隐私政策",
+    "footer.terms": "使用条款",
+    "footer.disclaimer": "免责声明",
+    "footer.confidentiality": "保密政策",
+    "footer.copyright": "© 2026 阿拉亚律师事务所。保留所有权利。",
+    "footer.notice": "本网站信息仅供参考，不构成法律建议。",
   },
 } as const;
 

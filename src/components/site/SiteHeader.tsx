@@ -47,7 +47,7 @@ export function SiteHeader() {
             <span className="block truncate font-serif text-lg leading-tight tracking-wide">
               {t("hero.firm")}
             </span>
-            <span className="eyebrow block text-gold/80">Attorneys & Legal Advisors</span>
+            <span className="eyebrow block text-gold/80">{t("attorneys")}</span>
           </span>
         </Link>
 
@@ -66,7 +66,7 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="hidden items-center gap-2 text-xs md:flex">
+          <div className="hidden items-center gap-1 text-xs md:flex">
             <button
               onClick={() => setLang("en")}
               className={cn(
@@ -86,13 +86,23 @@ export function SiteHeader() {
             >
               አማ
             </button>
+            <span className="text-navy-foreground/30">|</span>
+            <button
+              onClick={() => setLang("zh")}
+              className={cn(
+                "cursor-pointer px-1 transition-colors",
+                lang === "zh" ? "text-gold" : "text-navy-foreground/60 hover:text-navy-foreground",
+              )}
+            >
+              中文
+            </button>
           </div>
 
           <Link
             to="/portal"
             className="hidden text-sm text-navy-foreground/80 transition-colors hover:text-gold md:inline"
           >
-            Client Portal
+            {t("portal")}
           </Link>
 
           <a
@@ -133,7 +143,7 @@ export function SiteHeader() {
               </Link>
             ))}
             <div className="flex items-center justify-between gap-4 py-4">
-              <div className="flex items-center gap-2 text-xs">
+              <div className="flex items-center gap-1 text-xs">
                 <button
                   onClick={() => setLang("en")}
                   className={cn(
@@ -152,6 +162,16 @@ export function SiteHeader() {
                   )}
                 >
                   አማ
+                </button>
+                <span className="text-navy-foreground/30">|</span>
+                <button
+                  onClick={() => setLang("zh")}
+                  className={cn(
+                    "cursor-pointer px-1",
+                    lang === "zh" ? "text-gold" : "text-navy-foreground/60",
+                  )}
+                >
+                  中文
                 </button>
               </div>
               <div className="flex items-center gap-3">

@@ -43,48 +43,48 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="eyebrow text-gold">Navigation</h4>
+            <h4 className="eyebrow text-gold">{t("footer.navigation")}</h4>
             <ul className="mt-5 space-y-3 text-sm text-navy-foreground/70">
               <li>
                 <Link to="/about" className="hover:text-gold">
-                  About Us
+                  {t("nav.about")}
                 </Link>
               </li>
               <li>
                 <Link to="/practice-areas" className="hover:text-gold">
-                  Practice Areas
+                  {t("nav.practice")}
                 </Link>
               </li>
               <li>
                 <Link to="/team" className="hover:text-gold">
-                  Our Team
+                  {t("nav.team")}
                 </Link>
               </li>
               <li>
                 <Link to="/insights" className="hover:text-gold">
-                  Legal Insights
+                  {t("nav.insights")}
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-gold">
-                  Contact
+                  {t("nav.contact")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="eyebrow text-gold">Legal</h4>
+            <h4 className="eyebrow text-gold">{t("footer.legal")}</h4>
             <ul className="mt-5 space-y-3 text-sm text-navy-foreground/70">
-              <li>Privacy Policy</li>
-              <li>Terms of Use</li>
-              <li>Disclaimer</li>
-              <li>Confidentiality Policy</li>
+              <li>{t("footer.privacy")}</li>
+              <li>{t("footer.terms")}</li>
+              <li>{t("footer.disclaimer")}</li>
+              <li>{t("footer.confidentiality")}</li>
             </ul>
           </div>
 
           <div>
-            <h4 className="eyebrow text-gold">Contact</h4>
+            <h4 className="eyebrow text-gold">{t("footer.contact")}</h4>
             <ul className="mt-5 space-y-4 text-sm text-navy-foreground/70">
               <li className="flex gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
@@ -104,10 +104,8 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-navy-foreground/10 pt-6 text-xs text-navy-foreground/50 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 {FIRM.name}. All rights reserved.</p>
-          <p>
-            Information on this website is general and does not constitute legal advice.
-          </p>
+          <p>{t("footer.copyright")}</p>
+          <p>{t("footer.notice")}</p>
         </div>
       </div>
     </footer>
