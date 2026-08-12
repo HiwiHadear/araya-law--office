@@ -6,7 +6,7 @@ export const FIRM = {
   name: "Araya Law Office",
   tagline: "Justice. Integrity. Results.",
   phone: "+251 923 771 883",
-  whatsapp: "+251923771883",
+  whatsapp: "+251 923 771 883",
   email: "info@arayalawoffice.com",
   address:
     "Bole Megenagna Road, near Imperial, Sami Building, 5th Floor, Addis Ababa, Ethiopia",
