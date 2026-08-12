@@ -1,9 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import arayaLogo from "@/assets/araya-logo.png.asset.json";
 import { Button } from "@/components/ui/button";
+import { FIRM } from "@/lib/firm-data";
 import { useLang } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
