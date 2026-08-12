@@ -47,7 +47,7 @@ export function SiteHeader() {
             <span className="block truncate font-serif text-lg leading-tight tracking-wide">
               {t("hero.firm")}
             </span>
-            <span className="eyebrow block text-gold/80">Attorneys & Legal Advisors</span>
+            <span className="eyebrow block text-gold/80">{t("attorneys")}</span>
           </span>
         </Link>
 
