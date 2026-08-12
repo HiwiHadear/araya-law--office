@@ -15,7 +15,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { Toaster } from "@/components/ui/sonner";
 import { supabase } from "@/integrations/supabase/client";
-import { LanguageProvider } from "@/lib/i18n";
+import { LanguageProvider, useLang } from "@/lib/i18n";
 
 function NotFoundComponent() {
   return (
