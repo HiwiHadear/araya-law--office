@@ -4,6 +4,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
 import { useCopy, useLawyers } from "@/lib/firm-content";
 import { LAWYERS } from "@/lib/firm-data";
+import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/team/$slug")({
   loader: ({ params }) => {
@@ -51,6 +52,7 @@ function LawyerProfile() {
   const { lawyer: base } = Route.useLoaderData();
   const lawyers = useLawyers();
   const c = useCopy();
+  const { t } = useLang();
   const lawyer = lawyers.find((l) => l.slug === base.slug) ?? base;
 
   return (
@@ -69,7 +71,7 @@ function LawyerProfile() {
             />
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="gold">
-                <Link to="/book">{c("team.viewProfile") && "Book Consultation"}</Link>
+                <Link to="/book">{t("cta.book")}</Link>
               </Button>
               <Button asChild variant="outlineNavy">
                 <Link to="/contact">{c("team.contact")}</Link>
@@ -78,10 +80,10 @@ function LawyerProfile() {
           </div>
           <div className="space-y-10">
             <Block title={c("team.practice")} items={lawyer.practice} />
-            <Block title="Education" items={lawyer.education} />
-            <Block title="Experience" items={lawyer.experience} />
-            <Block title="Professional memberships" items={lawyer.memberships} />
-            <Block title="Languages" items={lawyer.languages} />
+            <Block title={c("team.education")} items={lawyer.education} />
+            <Block title={c("team.experience")} items={lawyer.experience} />
+            <Block title={c("team.memberships")} items={lawyer.memberships} />
+            <Block title={c("team.languages")} items={lawyer.languages} />
             <div>
               <h2 className="eyebrow text-gold">{c("team.qualifications")}</h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
