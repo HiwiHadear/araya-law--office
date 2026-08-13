@@ -15,7 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { FIRM, PRACTICE_AREAS } from "@/lib/firm-data";
+import { useCopy, useFirm, usePracticeAreas } from "@/lib/firm-content";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),
@@ -26,6 +26,9 @@ const schema = z.object({
 });
 
 export function ContactSection() {
+  const FIRM = useFirm();
+  const PRACTICE_AREAS = usePracticeAreas();
+  const c = useCopy();
   const [form, setForm] = useState({ name: "", phone: "", email: "", service: "", message: "" });
   const set = (k: keyof typeof form) => (v: string) => setForm((f) => ({ ...f, [k]: v }));
 
@@ -55,7 +58,7 @@ export function ContactSection() {
               <div className="flex gap-4">
                 <Phone className="mt-1 h-5 w-5 shrink-0 text-gold" />
                 <div className="min-w-0">
-                  <p className="eyebrow text-navy/60">Telephone</p>
+                  <p className="eyebrow text-navy/60">{c("contact.telephone")}</p>
                   <a href={`tel:${FIRM.phone.replace(/\s/g, "")}`} className="mt-1 block text-sm text-navy">
                     {FIRM.phone}
                   </a>
@@ -64,7 +67,7 @@ export function ContactSection() {
               <div className="flex gap-4">
                 <Mail className="mt-1 h-5 w-5 shrink-0 text-gold" />
                 <div className="min-w-0">
-                  <p className="eyebrow text-navy/60">Email</p>
+                  <p className="eyebrow text-navy/60">{c("contact.email")}</p>
                   <a href={`mailto:${FIRM.email}`} className="mt-1 block truncate text-sm text-navy">
                     {FIRM.email}
                   </a>
@@ -73,14 +76,14 @@ export function ContactSection() {
               <div className="flex gap-4">
                 <MapPin className="mt-1 h-5 w-5 shrink-0 text-gold" />
                 <div className="min-w-0">
-                  <p className="eyebrow text-navy/60">Office</p>
+                  <p className="eyebrow text-navy/60">{c("contact.office")}</p>
                   <p className="mt-1 text-sm text-navy">{FIRM.address}</p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <Clock className="mt-1 h-5 w-5 shrink-0 text-gold" />
                 <div className="min-w-0">
-                  <p className="eyebrow text-navy/60">Working hours</p>
+                  <p className="eyebrow text-navy/60">{c("contact.hours")}</p>
                   <p className="mt-1 text-sm text-navy">{FIRM.hours}</p>
                 </div>
               </div>
@@ -92,7 +95,7 @@ export function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircle /> Chat on WhatsApp
+                <MessageCircle /> {c("contact.whatsapp")}
               </a>
             </Button>
 

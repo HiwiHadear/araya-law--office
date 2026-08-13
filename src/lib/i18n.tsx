@@ -1,4 +1,12 @@
-import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 
 type Lang = "en" | "am" | "zh";
 
@@ -98,8 +106,24 @@ const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void; t: (
   { lang: "en", setLang: () => {}, t: (k) => DICT.en[k] },
 );
 
+const STORAGE_KEY = "araya-lang";
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>("en");
+  const [lang, setLangState] = useState<Lang>("en");
+
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved === "en" || saved === "am" || saved === "zh") setLangState(saved);
+  }, []);
+
+  const setLang = useCallback((l: Lang) => {
+    setLangState(l);
+    try {
+      localStorage.setItem(STORAGE_KEY, l);
+    } catch {
+      /* storage unavailable */
+    }
+  }, []);
   const t = useCallback((k: Key) => DICT[lang][k] ?? DICT.en[k], [lang]);
   const value = useMemo(() => ({ lang, setLang, t }), [lang, t]);
   return <LangContext.Provider value={value}>{children}</LangContext.Provider>;

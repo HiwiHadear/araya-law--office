@@ -2,10 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
 import arayaLogo from "@/assets/araya-logo.png.asset.json";
-import { FIRM } from "@/lib/firm-data";
+import { useFirm } from "@/lib/firm-content";
 import { useLang } from "@/lib/i18n";
 
 export function SiteFooter() {
+  const FIRM = useFirm();
   const { t } = useLang();
 
   return (

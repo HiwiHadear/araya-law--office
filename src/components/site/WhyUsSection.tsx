@@ -1,17 +1,16 @@
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { WHY_US } from "@/lib/firm-data";
+import { useCopy, useWhyUs } from "@/lib/firm-content";
 
 export function WhyUsSection() {
+  const items = useWhyUs();
+  const c = useCopy();
+
   return (
     <section className="bg-surface py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <SectionHeading
-          eyebrow="Why Choose Araya Law Office"
-          title="Why clients trust us"
-          lead="A disciplined, confidential and clearly communicated approach to every mandate we accept."
-        />
+        <SectionHeading eyebrow={c("why.eyebrow")} title={c("why.title")} lead={c("why.lead")} />
         <div className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          {WHY_US.map((item) => (
+          {items.map((item) => (
             <div key={item.n} className="border-t border-navy/15 pt-6">
               <span className="font-serif text-3xl text-gold">{item.n}</span>
               <h3 className="mt-3 text-lg text-navy">{item.title}</h3>
