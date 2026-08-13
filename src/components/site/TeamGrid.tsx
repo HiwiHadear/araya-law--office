@@ -1,12 +1,15 @@
 import { Link } from "@tanstack/react-router";
 
 import { Button } from "@/components/ui/button";
-import { LAWYERS } from "@/lib/firm-data";
+import { useCopy, useLawyers } from "@/lib/firm-content";
 
 export function TeamGrid() {
+  const lawyers = useLawyers();
+  const c = useCopy();
+
   return (
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {LAWYERS.map((l) => (
+      {lawyers.map((l) => (
         <article key={l.slug} className="group flex flex-col bg-background shadow-card">
           <div className="overflow-hidden bg-navy">
             <img
@@ -22,7 +25,7 @@ export function TeamGrid() {
             <h3 className="text-xl text-navy">{l.name}</h3>
             <p className="eyebrow mt-2 text-gold">{l.role}</p>
             <p className="mt-5 text-xs font-semibold tracking-wide text-navy/60 uppercase">
-              Areas of practice
+              {c("team.practice")}
             </p>
             <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
               {l.practice.map((p) => (
@@ -30,17 +33,17 @@ export function TeamGrid() {
               ))}
             </ul>
             <p className="mt-5 text-xs font-semibold tracking-wide text-navy/60 uppercase">
-              Qualifications
+              {c("team.qualifications")}
             </p>
             <p className="mt-2 text-sm text-muted-foreground">{l.qualifications}</p>
             <div className="mt-7 flex flex-wrap gap-3 pt-1">
               <Button asChild variant="navy" size="sm">
                 <Link to="/team/$slug" params={{ slug: l.slug }}>
-                  View Profile
+                  {c("team.viewProfile")}
                 </Link>
               </Button>
               <Button asChild variant="outlineNavy" size="sm">
-                <Link to="/contact">Contact Lawyer</Link>
+                <Link to="/contact">{c("team.contact")}</Link>
               </Button>
             </div>
           </div>

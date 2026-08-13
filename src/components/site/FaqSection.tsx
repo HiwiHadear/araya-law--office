@@ -5,19 +5,22 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FAQS } from "@/lib/firm-data";
+import { useCopy, useFaqs } from "@/lib/firm-content";
 
 export function FaqSection() {
+  const faqs = useFaqs();
+  const c = useCopy();
+
   return (
     <section className="bg-background py-24">
       <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
         <SectionHeading
-          eyebrow="FAQ"
-          title="Frequently asked questions"
-          lead="Straightforward answers to the questions clients ask us most often."
+          eyebrow={c("faq.eyebrow")}
+          title={c("faq.title")}
+          lead={c("faq.lead")}
         />
         <Accordion type="single" collapsible className="w-full">
-          {FAQS.map((f, i) => (
+          {faqs.map((f, i) => (
             <AccordionItem key={f.q} value={`item-${i}`}>
               <AccordionTrigger className="text-left font-serif text-lg text-navy hover:no-underline">
                 {f.q}

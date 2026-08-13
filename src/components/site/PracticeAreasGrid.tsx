@@ -2,10 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 
 import { Icon } from "@/components/site/Icon";
-import { PRACTICE_AREAS } from "@/lib/firm-data";
+import { useCopy, usePracticeAreas } from "@/lib/firm-content";
 
 export function PracticeAreasGrid({ limit }: { limit?: number }) {
-  const areas = limit ? PRACTICE_AREAS.slice(0, limit) : PRACTICE_AREAS;
+  const all = usePracticeAreas();
+  const c = useCopy();
+  const areas = limit ? all.slice(0, limit) : all;
 
   return (
     <div className="grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
@@ -21,7 +23,7 @@ export function PracticeAreasGrid({ limit }: { limit?: number }) {
           <h3 className="mt-6 text-xl text-navy">{area.title}</h3>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{area.description}</p>
           <span className="eyebrow mt-6 inline-flex items-center gap-1 text-royal opacity-0 transition-opacity group-hover:opacity-100">
-            Request advice <ArrowUpRight className="h-3.5 w-3.5" />
+            {c("team.requestAdvice")} <ArrowUpRight className="h-3.5 w-3.5" />
           </span>
         </Link>
       ))}
