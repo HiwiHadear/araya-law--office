@@ -2,6 +2,7 @@ import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 
 import { PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
+import { useCopy, useLawyers } from "@/lib/firm-content";
 import { LAWYERS } from "@/lib/firm-data";
 
 export const Route = createFileRoute("/team/$slug")({
@@ -47,7 +48,10 @@ function Block({ title, items }: { title: string; items: string[] }) {
 }
 
 function LawyerProfile() {
-  const { lawyer } = Route.useLoaderData();
+  const { lawyer: base } = Route.useLoaderData();
+  const lawyers = useLawyers();
+  const c = useCopy();
+  const lawyer = lawyers.find((l) => l.slug === base.slug) ?? base;
 
   return (
     <>
@@ -65,21 +69,21 @@ function LawyerProfile() {
             />
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="gold">
-                <Link to="/book">Book Consultation</Link>
+                <Link to="/book">{c("team.viewProfile") && "Book Consultation"}</Link>
               </Button>
               <Button asChild variant="outlineNavy">
-                <Link to="/contact">Contact Lawyer</Link>
+                <Link to="/contact">{c("team.contact")}</Link>
               </Button>
             </div>
           </div>
           <div className="space-y-10">
-            <Block title="Areas of specialization" items={lawyer.practice} />
+            <Block title={c("team.practice")} items={lawyer.practice} />
             <Block title="Education" items={lawyer.education} />
             <Block title="Experience" items={lawyer.experience} />
             <Block title="Professional memberships" items={lawyer.memberships} />
             <Block title="Languages" items={lawyer.languages} />
             <div>
-              <h2 className="eyebrow text-gold">Qualifications</h2>
+              <h2 className="eyebrow text-gold">{c("team.qualifications")}</h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {lawyer.qualifications}
               </p>
