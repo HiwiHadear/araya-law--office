@@ -289,3 +289,66 @@ export function useCopy() {
   const { lang } = useLang();
   return (k: keyof (typeof COPY)["en"]) => COPY[lang][k] ?? COPY.en[k];
 }
+
+type Para = { label?: string; text: string };
+
+const ABOUT_BODY: Record<"en" | "am" | "zh", Para[]> = {
+  en: [
+    {
+      text: "Araya Law Office was established in Addis Ababa to serve clients who need dependable legal counsel delivered with clarity and discretion. What began as a litigation-focused practice has grown into a full-service office covering civil, corporate, regulatory, and personal legal matters.",
+    },
+    {
+      label: "Legal philosophy.",
+      text: "We believe good legal work begins with listening. Before recommending a course of action we establish the commercial or personal outcome the client actually needs, then design the shortest legally sound route to it — whether that is negotiation, mediation, or litigation.",
+    },
+    {
+      label: "Areas of expertise.",
+      text: "Civil litigation, corporate and commercial law, contracts, property and real estate, family law, employment and labor, criminal defense, administrative and regulatory practice, immigration and nationality, and alternative dispute resolution.",
+    },
+    {
+      label: "Commitment to clients.",
+      text: "Every client receives a named attorney, realistic timelines, transparent fees, and updates in plain language. Sensitive matters are handled by a limited team on a need-to-know basis.",
+    },
+    {
+      label: "Professional standards.",
+      text: "Our attorneys are licensed to appear before the Federal Courts of Ethiopia and practise in accordance with the professional and ethical obligations of the Ethiopian bar, including strict confidentiality and conflict-of-interest screening.",
+    },
+    {
+      label: "Experience and qualifications.",
+      text: "The team combines LL.B and LL.M qualifications, certified mediation training, and decades of combined courtroom and advisory experience across domestic and cross-border matters.",
+    },
+  ],
+  get am() {
+    return ABOUT_BODY.en;
+  },
+  zh: [
+    {
+      text: "阿拉亚律师事务所设立于亚的斯亚贝巴，服务于需要清晰、审慎且可靠法律意见的客户。本所由最初以诉讼为主的执业逐步发展为覆盖民事、公司、监管及个人法律事务的综合性事务所。",
+    },
+    {
+      label: "法律理念。",
+      text: "我们相信优质的法律工作始于倾听。在提出方案之前，我们先明确客户真正需要的商业或个人结果，再设计通往该结果的最短且法律稳健的路径——无论是谈判、调解还是诉讼。",
+    },
+    {
+      label: "专长领域。",
+      text: "民事诉讼、公司与商事法、合同、房地产与不动产、家事法、劳动与雇佣、刑事辩护、行政与监管实务、移民与国籍，以及替代性纠纷解决。",
+    },
+    {
+      label: "对客户的承诺。",
+      text: "每位客户都会有一位专属负责律师、务实的时间安排、透明的收费，以及以通俗语言呈现的进展通报。敏感事务由小范围团队在必要知悉原则下处理。",
+    },
+    {
+      label: "职业标准。",
+      text: "本所律师具备在埃塞俄比亚联邦法院出庭的执业资格，并依照埃塞俄比亚律师界的职业与伦理义务执业，包括严格保密与利益冲突审查。",
+    },
+    {
+      label: "经验与资历。",
+      text: "团队成员拥有法学学士与法学硕士学历、注册调解培训资质，以及在国内与跨境事务中累积数十年的庭审与顾问经验。",
+    },
+  ],
+};
+
+export function useAboutBody(): Para[] {
+  const { lang } = useLang();
+  return ABOUT_BODY[lang] ?? ABOUT_BODY.en;
+}
