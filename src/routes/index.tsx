@@ -12,7 +12,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { TeamGrid } from "@/components/site/TeamGrid";
 import { WhyUsSection } from "@/components/site/WhyUsSection";
 import { Button } from "@/components/ui/button";
-import { CORE_VALUES } from "@/lib/firm-data";
+import { useCoreValues } from "@/lib/firm-content";
 import { useLang } from "@/lib/i18n";
 
 const TITLE = "Araya Law Office — Attorneys & Legal Advisors in Addis Ababa";
@@ -34,6 +34,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const coreValues = useCoreValues();
   const { t } = useLang();
 
   return (
@@ -119,7 +120,7 @@ function Index() {
             align="center"
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-            {CORE_VALUES.map((v) => (
+            {coreValues.map((v) => (
               <div key={v.title} className="bg-background p-7 shadow-card">
                 <Icon name={v.icon} className="h-6 w-6 text-gold" />
                 <h3 className="mt-5 text-lg text-navy">{v.title}</h3>

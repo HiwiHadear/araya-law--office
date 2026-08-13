@@ -18,7 +18,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { CONSULTATION_TYPES, LANGUAGES, LAWYERS, PRACTICE_AREAS } from "@/lib/firm-data";
+import { useLawyers, usePracticeAreas } from "@/lib/firm-content";
+import { CONSULTATION_TYPES, LANGUAGES } from "@/lib/firm-data";
 import { cn } from "@/lib/utils";
 
 const TIME_SLOTS = ["09:00", "10:00", "11:00", "13:30", "14:30", "15:30", "16:30"];
@@ -37,6 +38,8 @@ const schema = z.object({
 });
 
 export function ConsultationSection() {
+  const practiceAreas = usePracticeAreas();
+  const lawyers = useLawyers();
   const [date, setDate] = useState<Date | undefined>();
   const [form, setForm] = useState({
     name: "",
@@ -128,7 +131,7 @@ export function ConsultationSection() {
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
-                  {PRACTICE_AREAS.map((p) => (
+                  {practiceAreas.map((p) => (
                     <SelectItem key={p.slug} value={p.title}>
                       {p.title}
                     </SelectItem>
@@ -143,7 +146,7 @@ export function ConsultationSection() {
                   <SelectValue placeholder="Select a lawyer" />
                 </SelectTrigger>
                 <SelectContent>
-                  {LAWYERS.map((l) => (
+                  {lawyers.map((l) => (
                     <SelectItem key={l.slug} value={l.name}>
                       {l.name} — {l.role}
                     </SelectItem>
