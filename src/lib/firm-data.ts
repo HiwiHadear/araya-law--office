@@ -9,7 +9,7 @@ export const FIRM = {
   whatsapp: "+251 923 771 883",
   email: "info@arayalawoffice.com",
   address:
-    "Bole Megenagna Road, near Imperial, Sami Building, 5th Floor, Addis Ababa, Ethiopia",
+    "Addis Ababa, Bole Sub-City, Wereda 13, Imperial Sami Building, 5th Floor, Ethiopia",
   hours: "Monday – Friday, 8:30 AM – 5:30 PM · Saturday by appointment",
   socials: {
     linkedin: "https://www.linkedin.com/in/araya-kebede-araya",
