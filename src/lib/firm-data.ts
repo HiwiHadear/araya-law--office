@@ -167,8 +167,8 @@ export type Lawyer = {
 
 export const LAWYERS: Lawyer[] = [
   {
-    slug: "araya-tesfaye",
-    name: "Araya Tesfaye",
+    slug: "araya-kebede",
+    name: "Araya Kebede",
     role: "Managing Partner",
     photo: lawyer1,
     practice: ["Corporate Law", "Civil Litigation", "Contract Law"],
@@ -225,7 +225,7 @@ export const ARTICLES = [
     slug: "understanding-your-rights",
     title: "Understanding Your Rights Under Ethiopian Law",
     category: "Legal Rights",
-    author: "Araya Tesfaye",
+    author: "Araya Kebede",
     date: "12 July 2026",
     readTime: "6 min read",
     excerpt:
@@ -245,7 +245,7 @@ export const ARTICLES = [
     slug: "business-registration-compliance",
     title: "Business Registration and Corporate Compliance",
     category: "Corporate",
-    author: "Araya Tesfaye",
+    author: "Araya Kebede",
     date: "09 June 2026",
     readTime: "7 min read",
     excerpt:
@@ -274,7 +274,7 @@ export const ARTICLES = [
     slug: "adr-in-ethiopia",
     title: "Alternative Dispute Resolution in Ethiopia",
     category: "Dispute Resolution",
-    author: "Araya Tesfaye",
+    author: "Araya Kebede",
     date: "17 April 2026",
     readTime: "8 min read",
     excerpt:
