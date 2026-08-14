@@ -27,18 +27,49 @@ export function SiteFooter() {
             </p>
             <div className="mt-6 flex gap-3">
               <a
-                href="#"
-                aria-label="LinkedIn"
+                href={FIRM.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn — Araya Kebede"
                 className="grid h-9 w-9 place-items-center border border-navy-foreground/20 text-navy-foreground/70 transition-colors hover:border-gold hover:text-gold"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href={FIRM.socials.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="grid h-9 w-9 place-items-center border border-navy-foreground/20 text-navy-foreground/70 transition-colors hover:border-gold hover:text-gold"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href={FIRM.socials.x}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="X"
                 className="grid h-9 w-9 place-items-center border border-navy-foreground/20 text-navy-foreground/70 transition-colors hover:border-gold hover:text-gold"
               >
                 <Twitter className="h-4 w-4" />
+              </a>
+              <a
+                href={FIRM.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="grid h-9 w-9 place-items-center border border-navy-foreground/20 text-navy-foreground/70 transition-colors hover:border-gold hover:text-gold"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href={FIRM.socials.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="grid h-9 w-9 place-items-center border border-navy-foreground/20 text-navy-foreground/70 transition-colors hover:border-gold hover:text-gold"
+              >
+                <Youtube className="h-4 w-4" />
               </a>
             </div>
           </div>
