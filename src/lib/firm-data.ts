@@ -11,6 +11,13 @@ export const FIRM = {
   address:
     "Bole Megenagna Road, near Imperial, Sami Building, 5th Floor, Addis Ababa, Ethiopia",
   hours: "Monday – Friday, 8:30 AM – 5:30 PM · Saturday by appointment",
+  socials: {
+    linkedin: "https://www.linkedin.com/in/araya-kebede-araya",
+    facebook: "https://www.facebook.com/ArayaLawOffice",
+    x: "https://x.com/ArayaLawOffice",
+    instagram: "https://www.instagram.com/arayalawoffice",
+    youtube: "https://www.youtube.com/@ArayaLawOffice",
+  },
 };
 
 export type PracticeArea = {
