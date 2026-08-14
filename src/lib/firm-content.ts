@@ -74,8 +74,8 @@ const ZH_TERMS: Record<string, string> = {
 };
 
 const ZH_LAWYERS: Record<string, Partial<Lawyer>> = {
-  "araya-tesfaye": {
-    name: "阿拉亚·特斯法耶",
+  "araya-kebede": {
+    name: "阿拉亚·凯贝德",
     role: "执行合伙人",
     qualifications: "法学学士、法学硕士（商法），联邦法院执业律师",
     bio: "阿拉亚在商事诉讼与公司法律顾问领域执业二十余年后创立本所，长期代理国内及国际客户出庭埃塞俄比亚联邦法院。",
