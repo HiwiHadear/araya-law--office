@@ -17,6 +17,7 @@ export const FIRM = {
     x: "https://x.com/ArayaLawOffice",
     instagram: "https://www.instagram.com/arayalawoffice",
     youtube: "https://www.youtube.com/@ArayaLawOffice",
+    telegram: "https://t.me/ArayaLawOffice",
   },
 };
 
