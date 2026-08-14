@@ -71,6 +71,15 @@ export function SiteFooter() {
               >
                 <Youtube className="h-4 w-4" />
               </a>
+              <a
+                href={FIRM.socials.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+                className="grid h-9 w-9 place-items-center border border-navy-foreground/20 text-navy-foreground/70 transition-colors hover:border-gold hover:text-gold"
+              >
+                <Send className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
