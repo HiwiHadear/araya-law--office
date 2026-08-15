@@ -102,9 +102,11 @@ export function ContactSection() {
             <div className="overflow-hidden border border-border shadow-card">
               <iframe
                 title="Araya Law Office location map"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=38.76%2C8.98%2C38.81%2C9.02&layer=mapnik"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(FIRM.address)}&z=16&output=embed`}
                 className="h-72 w-full"
                 loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
               />
             </div>
           </div>
