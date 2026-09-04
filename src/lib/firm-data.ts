@@ -7,7 +7,7 @@ export const FIRM = {
   tagline: "Justice. Integrity. Results.",
   phone: "+251 923 771 883",
   whatsapp: "+251 923 771 883",
-  email: "info@arayalawoffice.com",
+  email: "info@arayalawfirm.com",
   address:
     "Addis Ababa, Bole Sub-City, Wereda 13, Imperial Sami Building, 5th Floor, Ethiopia",
   hours: "Monday – Friday, 8:30 AM – 5:30 PM · Saturday by appointment",
