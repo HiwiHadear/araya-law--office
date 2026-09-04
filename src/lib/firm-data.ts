@@ -211,21 +211,23 @@ export const LAWYERS: Lawyer[] = [
     languages: ["Amharic", "English"],
   },
   {
-    slug: "yonas-tadesse",
-    name: "Yonas Tadesse",
+    slug: "chen-wei",
+    name: "Chen Wei",
     role: "Associate Attorney",
     photo: lawyer3,
     practice: ["Criminal Defense", "Administrative Law", "Immigration"],
-    qualifications: "LL.B, Diploma in Legal Practice & Procedure",
-    bio: "Yonas represents clients in criminal proceedings and regulatory matters, and handles immigration, residence, and nationality applications.",
-    education: ["LL.B, Mekelle University School of Law"],
+    qualifications: "LL.B, LL.M, Diploma in Legal Practice & Procedure",
+    bio: "Chen Wei represents clients in criminal proceedings and regulatory matters, and handles immigration, residence, and nationality applications, with a focus on Chinese-speaking clients and businesses in Ethiopia.",
+    education: ["LL.M, China University of Political Science and Law", "LL.B, Addis Ababa University School of Law"],
     experience: [
       "Defense counsel in criminal proceedings at first instance and appeal",
       "Regulatory representation before administrative authorities",
+      "Adviser to Chinese enterprises on immigration, residence, and compliance",
     ],
     memberships: ["Ethiopian Federal Advocates Association"],
-    languages: ["Amharic", "English", "Afaan Oromo"],
+    languages: ["Mandarin Chinese", "English", "Amharic"],
   },
+
 ];
 
 export const ARTICLES = [
