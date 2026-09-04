@@ -82,13 +82,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Araya Law Office — Attorneys & Legal Advisors" },
+      { title: "Araya Law Firm — Attorneys & Legal Advisors" },
       {
         name: "description",
         content:
           "Professional legal representation and trusted advisory services in Addis Ababa, Ethiopia.",
       },
-      { name: "author", content: "Araya Law Office" },
+      { name: "author", content: "Araya Law Firm" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

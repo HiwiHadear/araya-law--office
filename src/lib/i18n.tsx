@@ -21,7 +21,7 @@ const DICT = {
     "cta.book": "Book Consultation",
     "cta.bookLong": "Book a Consultation",
     "cta.practice": "Our Practice Areas",
-    "hero.firm": "Araya Law Office",
+    "hero.firm": "Araya Law Firm",
     "hero.tagline": "Justice. Integrity. Results.",
     "hero.lead":
       "Professional legal representation and trusted legal advisory services tailored to individuals, businesses, and organizations.",
@@ -37,7 +37,7 @@ const DICT = {
     "footer.terms": "Terms of Use",
     "footer.disclaimer": "Disclaimer",
     "footer.confidentiality": "Confidentiality Policy",
-    "footer.copyright": "© 2026 Araya Law Office. All rights reserved.",
+    "footer.copyright": "© 2026 Araya Law Firm. All rights reserved.",
     "footer.notice": "Information on this website is general and does not constitute legal advice.",
   },
   am: {
@@ -50,7 +50,7 @@ const DICT = {
     "cta.book": "ቀጠሮ ይያዙ",
     "cta.bookLong": "ለምክክር ቀጠሮ ይያዙ",
     "cta.practice": "የሙያ ዘርፎቻችን",
-    "hero.firm": "አራያ የሕግ ጽሕፈት ቤት",
+    "hero.firm": "አራያ የሕግ ድርጅት",
     "hero.tagline": "ፍትሕ። ታማኝነት። ውጤት።",
     "hero.lead":
       "ለግለሰቦች፣ ለንግድ ድርጅቶችና ለተቋማት የተዘጋጀ ሙያዊ የሕግ ውክልናና አስተማማኝ የሕግ አማካሪ አገልግሎት።",
@@ -66,7 +66,7 @@ const DICT = {
     "footer.terms": "የአጠቃቀም ውሎች",
     "footer.disclaimer": "ውክልና",
     "footer.confidentiality": "የምስጢራዊነት ፖሊሲ",
-    "footer.copyright": "© 2026 አራያ የሕግ ጽሕፈት ቤት። መብቱ በሕግ የተጠበቀ ነው።",
+    "footer.copyright": "© 2026 አራያ የሕግ ድርጅት። መብቱ በሕግ የተጠበቀ ነው።",
     "footer.notice": "በዚህ ድር ጣቢያ ላይ ያሉ መረጃዎች አጠቃላይ እና የሕግ አማካሪነት አይሆኑም።",
   },
   zh: {

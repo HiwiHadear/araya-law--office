@@ -3,7 +3,7 @@ import lawyer2 from "@/assets/lawyer-2.jpg";
 import lawyer3 from "@/assets/lawyer-3.jpg";
 
 export const FIRM = {
-  name: "Araya Law Office",
+  name: "Araya Law Firm",
   tagline: "Justice. Integrity. Results.",
   phone: "+251 923 771 883",
   whatsapp: "+251 923 771 883",

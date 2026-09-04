@@ -40,7 +40,7 @@ export function SiteHeader() {
         <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
           <img
             src={arayaLogo.url}
-            alt="Araya Law Office seal"
+            alt="Araya Law Firm seal"
             className="h-11 w-11 shrink-0 object-contain"
           />
           <span className="min-w-0">

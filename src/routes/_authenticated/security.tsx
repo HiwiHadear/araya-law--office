@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_authenticated/security")({
-  head: () => ({ meta: [{ title: "Security & Two-Factor — Araya Law Office" }] }),
+  head: () => ({ meta: [{ title: "Security & Two-Factor — Araya Law Firm" }] }),
   component: SecurityPage,
 });
 

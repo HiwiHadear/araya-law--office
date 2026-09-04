@@ -3,9 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { TeamGrid } from "@/components/site/TeamGrid";
 
-const TITLE = "Our Legal Team — Attorneys at Araya Law Office";
+const TITLE = "Our Legal Team — Attorneys at Araya Law Firm";
 const DESC =
-  "Meet the attorneys of Araya Law Office: qualifications, areas of practice, languages, and professional memberships of our Addis Ababa legal team.";
+  "Meet the attorneys of Araya Law Firm: qualifications, areas of practice, languages, and professional memberships of our Addis Ababa legal team.";
 
 export const Route = createFileRoute("/team/")({
   head: () => ({

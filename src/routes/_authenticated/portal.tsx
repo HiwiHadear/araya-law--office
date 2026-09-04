@@ -15,7 +15,7 @@ import {
 } from "@/lib/portal-data";
 
 export const Route = createFileRoute("/_authenticated/portal")({
-  head: () => ({ meta: [{ title: "Portal Overview — Araya Law Office" }] }),
+  head: () => ({ meta: [{ title: "Portal Overview — Araya Law Firm" }] }),
   component: PortalOverview,
 });
 

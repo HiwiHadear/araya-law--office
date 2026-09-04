@@ -16,7 +16,7 @@ export const Route = createFileRoute("/team/$slug")({
     if (!loaderData) {
       return { meta: [{ title: "Profile unavailable" }, { name: "robots", content: "noindex" }] };
     }
-    const title = `${loaderData.lawyer.name} — ${loaderData.lawyer.role} | Araya Law Office`;
+    const title = `${loaderData.lawyer.name} — ${loaderData.lawyer.role} | Araya Law Firm`;
     const desc = loaderData.lawyer.bio;
     return {
       meta: [

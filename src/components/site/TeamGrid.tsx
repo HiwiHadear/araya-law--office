@@ -14,7 +14,7 @@ export function TeamGrid() {
           <div className="overflow-hidden bg-navy">
             <img
               src={l.photo}
-              alt={`${l.name}, ${l.role} at Araya Law Office`}
+              alt={`${l.name}, ${l.role} at Araya Law Firm`}
               loading="lazy"
               width={800}
               height={1008}
