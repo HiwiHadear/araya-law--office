@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { useCoreValues } from "@/lib/firm-content";
 import { useLang } from "@/lib/i18n";
 
-const TITLE = "Araya Law Office — Attorneys & Legal Advisors in Addis Ababa";
+const TITLE = "Araya Law Firm — Attorneys & Legal Advisors in Addis Ababa";
 const DESC =
   "Professional legal representation and trusted advisory services for individuals, businesses, and organizations in Ethiopia. Book a confidential consultation.";
 
@@ -42,7 +42,7 @@ function Index() {
       <section className="relative isolate overflow-hidden bg-navy">
         <img
           src={heroOffice}
-          alt="Boardroom of Araya Law Office at dusk"
+          alt="Boardroom of Araya Law Firm at dusk"
           width={1920}
           height={1280}
           className="absolute inset-0 h-full w-full object-cover opacity-45"
@@ -79,7 +79,7 @@ function Index() {
             <SectionHeading
               eyebrow="About the Firm"
               title="Professional. Ethical. Client-focused."
-              lead="Araya Law Office is a full-service legal practice based in Addis Ababa, advising individuals, private companies, and institutions across litigation, corporate, and regulatory matters. Our work is built on rigorous legal analysis, strict confidentiality, and clear communication at every stage."
+              lead="Araya Law Firm is a full-service legal practice based in Addis Ababa, advising individuals, private companies, and institutions across litigation, corporate, and regulatory matters. Our work is built on rigorous legal analysis, strict confidentiality, and clear communication at every stage."
             />
             <div className="mt-10 grid gap-8 sm:grid-cols-2">
               <div>

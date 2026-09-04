@@ -17,7 +17,7 @@ export function SiteFooter() {
             <div className="flex items-center gap-3">
               <img
                 src={arayaLogo.url}
-                alt="Araya Law Office seal"
+                alt="Araya Law Firm seal"
                 className="h-11 w-11 shrink-0 object-contain"
               />
               <span className="font-serif text-lg">{t("hero.firm")}</span>

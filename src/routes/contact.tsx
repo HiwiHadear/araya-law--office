@@ -4,9 +4,9 @@ import { ContactSection } from "@/components/site/ContactSection";
 import { FaqSection } from "@/components/site/FaqSection";
 import { PageHero } from "@/components/site/PageHero";
 
-const TITLE = "Contact Araya Law Office — Addis Ababa Legal Consultation";
+const TITLE = "Contact Araya Law Firm — Addis Ababa Legal Consultation";
 const DESC =
-  "Contact Araya Law Office in Addis Ababa by phone, email, or WhatsApp, or send an inquiry. Office hours, address, and map included.";
+  "Contact Araya Law Firm in Addis Ababa by phone, email, or WhatsApp, or send an inquiry. Office hours, address, and map included.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

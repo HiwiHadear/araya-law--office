@@ -4,7 +4,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { PracticeAreasGrid } from "@/components/site/PracticeAreasGrid";
 import { WhyUsSection } from "@/components/site/WhyUsSection";
 
-const TITLE = "Practice Areas — Araya Law Office, Addis Ababa";
+const TITLE = "Practice Areas — Araya Law Firm, Addis Ababa";
 const DESC =
   "Civil litigation, corporate and commercial law, contracts, property, family, employment, criminal defense, regulatory, immigration, and dispute resolution.";
 

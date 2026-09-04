@@ -48,7 +48,7 @@ export function ContactSection() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Contact"
-          title="Contact Araya Law Office"
+          title="Contact Araya Law Firm"
           lead="Visit our Addis Ababa office, call us during working hours, or send an inquiry and we will respond promptly."
         />
 
@@ -101,7 +101,7 @@ export function ContactSection() {
 
             <div className="overflow-hidden border border-border shadow-card">
               <iframe
-                title="Araya Law Office location map"
+                title="Araya Law Firm location map"
                 src={`https://www.google.com/maps?q=${encodeURIComponent(FIRM.address)}&z=16&output=embed`}
                 className="h-72 w-full"
                 loading="lazy"

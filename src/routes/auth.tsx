@@ -11,9 +11,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { lovable } from "@/integrations/lovable/index";
 import { supabase } from "@/integrations/supabase/client";
 
-const TITLE = "Client Portal Sign In — Araya Law Office";
+const TITLE = "Client Portal Sign In — Araya Law Firm";
 const DESC =
-  "Secure sign in to the Araya Law Office client portal: track your case, view hearings, and access documents confidentially.";
+  "Secure sign in to the Araya Law Firm client portal: track your case, view hearings, and access documents confidentially.";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
@@ -128,12 +128,12 @@ function AuthPage() {
           <div className="flex items-center gap-3">
             <img
               src={arayaLogo.url}
-              alt="Araya Law Office seal"
+              alt="Araya Law Firm seal"
               className="h-11 w-11 shrink-0 object-contain"
             />
             <div>
               <p className="eyebrow text-gold">Secure Portal</p>
-              <h1 className="font-serif text-2xl leading-tight">Araya Law Office</h1>
+              <h1 className="font-serif text-2xl leading-tight">Araya Law Firm</h1>
             </div>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">

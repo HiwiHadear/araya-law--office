@@ -4,9 +4,9 @@ import { ConsultationSection } from "@/components/site/ConsultationSection";
 import { FaqSection } from "@/components/site/FaqSection";
 import { PageHero } from "@/components/site/PageHero";
 
-const TITLE = "Book a Consultation — Araya Law Office";
+const TITLE = "Book a Consultation — Araya Law Firm";
 const DESC =
-  "Book an office, telephone, video, or online legal consultation with an attorney at Araya Law Office. Select your service, lawyer, date, and time.";
+  "Book an office, telephone, video, or online legal consultation with an attorney at Araya Law Firm. Select your service, lawyer, date, and time.";
 
 export const Route = createFileRoute("/book")({
   head: () => ({

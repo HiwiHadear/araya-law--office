@@ -208,7 +208,7 @@ export const COPY = {
     "faq.eyebrow": "FAQ",
     "faq.title": "Frequently asked questions",
     "faq.lead": "Straightforward answers to the questions clients ask us most often.",
-    "why.eyebrow": "Why Choose Araya Law Office",
+    "why.eyebrow": "Why Choose Araya Law Firm",
     "why.title": "Why clients trust us",
     "why.lead":
       "A disciplined, confidential and clearly communicated approach to every mandate we accept.",
@@ -307,7 +307,7 @@ type Para = { label?: string; text: string };
 const ABOUT_BODY: Record<"en" | "am" | "zh", Para[]> = {
   en: [
     {
-      text: "Araya Law Office was established in Addis Ababa to serve clients who need dependable legal counsel delivered with clarity and discretion. What began as a litigation-focused practice has grown into a full-service office covering civil, corporate, regulatory, and personal legal matters.",
+      text: "Araya Law Firm was established in Addis Ababa to serve clients who need dependable legal counsel delivered with clarity and discretion. What began as a litigation-focused practice has grown into a full-service office covering civil, corporate, regulatory, and personal legal matters.",
     },
     {
       label: "Legal philosophy.",

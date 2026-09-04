@@ -22,7 +22,7 @@ import { PRACTICE_AREAS } from "@/lib/firm-data";
 import { CASE_STATUSES, STATUS_LABELS, fetchCases, fetchProfiles, formatDate } from "@/lib/portal-data";
 
 export const Route = createFileRoute("/_authenticated/cases/")({
-  head: () => ({ meta: [{ title: "Case Management — Araya Law Office" }] }),
+  head: () => ({ meta: [{ title: "Case Management — Araya Law Firm" }] }),
   component: CasesPage,
 });
 

@@ -7,9 +7,9 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { WhyUsSection } from "@/components/site/WhyUsSection";
 import { useAboutBody, useCopy, useCoreValues } from "@/lib/firm-content";
 
-const TITLE = "About Araya Law Office — History, Mission & Core Values";
+const TITLE = "About Araya Law Firm — History, Mission & Core Values";
 const DESC =
-  "Learn about Araya Law Office: our establishment, legal philosophy, areas of expertise, professional standards, and commitment to clients in Ethiopia.";
+  "Learn about Araya Law Firm: our establishment, legal philosophy, areas of expertise, professional standards, and commitment to clients in Ethiopia.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -35,7 +35,7 @@ function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="A practice built on judgment, discretion, and results"
-        lead="Araya Law Office advises individuals, businesses, and institutions across Ethiopia with the rigour of an international firm and the accessibility of a trusted local adviser."
+        lead="Araya Law Firm advises individuals, businesses, and institutions across Ethiopia with the rigour of an international firm and the accessibility of a trusted local adviser."
       />
 
       <section className="bg-background py-24">

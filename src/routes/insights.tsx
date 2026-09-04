@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InsightsGrid } from "@/components/site/InsightsGrid";
 import { PageHero } from "@/components/site/PageHero";
 
-const TITLE = "Legal Insights & Knowledge Center — Araya Law Office";
+const TITLE = "Legal Insights & Knowledge Center — Araya Law Firm";
 const DESC =
   "Articles on Ethiopian law: contracts, corporate compliance, employment rights, property transactions, dispute resolution, and your legal rights.";
 

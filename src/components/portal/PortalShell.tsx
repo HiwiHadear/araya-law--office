@@ -34,7 +34,7 @@ export function PortalShell({ children }: { children: ReactNode }) {
           <div className="flex items-center gap-4">
             <img
               src={arayaLogo.url}
-              alt="Araya Law Office seal"
+              alt="Araya Law Firm seal"
               className="h-12 w-12 shrink-0 object-contain"
             />
             <div>

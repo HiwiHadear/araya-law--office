@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { fetchCases, fetchHearings, formatDateTime } from "@/lib/portal-data";
 
 export const Route = createFileRoute("/_authenticated/calendar")({
-  head: () => ({ meta: [{ title: "Court Calendar — Araya Law Office" }] }),
+  head: () => ({ meta: [{ title: "Court Calendar — Araya Law Firm" }] }),
   component: CalendarPage,
 });
 
