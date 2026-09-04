@@ -275,7 +275,7 @@ export const ARTICLES = [
     slug: "property-transactions",
     title: "Property Transactions: Important Legal Considerations",
     category: "Property",
-    author: "Yonas Tadesse",
+    author: "Chen Wei",
     date: "04 May 2026",
     readTime: "5 min read",
     excerpt: "Title verification, lease terms, and the due diligence that prevents costly disputes.",
