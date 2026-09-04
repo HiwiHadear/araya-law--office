@@ -240,7 +240,7 @@ export const COPY = {
     "faq.eyebrow": "ተደጋጋሚ ጥያቄዎች",
     "faq.title": "ተደጋጋሚ ጥያቄዎች",
     "faq.lead": "ደንበኞች በተደጋጋሚ ለሚጠይቁት ጥያቄዎች ቀጥተኛ መልሶች።",
-    "why.eyebrow": "ለምን አራያ የሕግ ጽሕፈት ቤት",
+    "why.eyebrow": "ለምን አራያ የሕግ ድርጅት",
     "why.title": "ደንበኞች ለምን ያምኑናል",
     "why.lead": "ለሁሉም ሥራችን ሥርዓታዊ፣ ምስጢራዊና በግልጽ የሚነገር አቀራረብ።",
     "team.requestAdvice": "አማካሪነት ይጠይቁ",

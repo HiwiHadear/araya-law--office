@@ -50,7 +50,7 @@ const DICT = {
     "cta.book": "ቀጠሮ ይያዙ",
     "cta.bookLong": "ለምክክር ቀጠሮ ይያዙ",
     "cta.practice": "የሙያ ዘርፎቻችን",
-    "hero.firm": "አራያ የሕግ ጽሕፈት ቤት",
+    "hero.firm": "አራያ የሕግ ድርጅት",
     "hero.tagline": "ፍትሕ። ታማኝነት። ውጤት።",
     "hero.lead":
       "ለግለሰቦች፣ ለንግድ ድርጅቶችና ለተቋማት የተዘጋጀ ሙያዊ የሕግ ውክልናና አስተማማኝ የሕግ አማካሪ አገልግሎት።",
@@ -66,7 +66,7 @@ const DICT = {
     "footer.terms": "የአጠቃቀም ውሎች",
     "footer.disclaimer": "ውክልና",
     "footer.confidentiality": "የምስጢራዊነት ፖሊሲ",
-    "footer.copyright": "© 2026 አራያ የሕግ ጽሕፈት ቤት። መብቱ በሕግ የተጠበቀ ነው።",
+    "footer.copyright": "© 2026 አራያ የሕግ ድርጅት። መብቱ በሕግ የተጠበቀ ነው።",
     "footer.notice": "በዚህ ድር ጣቢያ ላይ ያሉ መረጃዎች አጠቃላይ እና የሕግ አማካሪነት አይሆኑም።",
   },
   zh: {
