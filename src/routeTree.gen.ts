@@ -17,6 +17,7 @@ import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as PracticeAreasRouteImport } from './routes/practice-areas'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedCalendarRouteImport } from './routes/_authenticated/calendar'
 import { Route as AuthenticatedDocumentsRouteImport } from './routes/_authenticated/documents'
@@ -64,6 +65,11 @@ const InsightsRoute = InsightsRouteImport.update({
 const PracticeAreasRoute = PracticeAreasRouteImport.update({
   id: '/practice-areas',
   path: '/practice-areas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
@@ -121,6 +127,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/insights': typeof InsightsRoute
   '/practice-areas': typeof PracticeAreasRoute
+  '/services': typeof ServicesRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/calendar': typeof AuthenticatedCalendarRoute
   '/documents': typeof AuthenticatedDocumentsRoute
@@ -139,6 +146,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/insights': typeof InsightsRoute
   '/practice-areas': typeof PracticeAreasRoute
+  '/services': typeof ServicesRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/calendar': typeof AuthenticatedCalendarRoute
   '/documents': typeof AuthenticatedDocumentsRoute
@@ -159,6 +167,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/insights': typeof InsightsRoute
   '/practice-areas': typeof PracticeAreasRoute
+  '/services': typeof ServicesRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/_authenticated/calendar': typeof AuthenticatedCalendarRoute
   '/_authenticated/documents': typeof AuthenticatedDocumentsRoute
@@ -179,6 +188,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/insights'
     | '/practice-areas'
+    | '/services'
     | '/admin'
     | '/calendar'
     | '/documents'
@@ -197,6 +207,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/insights'
     | '/practice-areas'
+    | '/services'
     | '/admin'
     | '/calendar'
     | '/documents'
@@ -216,6 +227,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/insights'
     | '/practice-areas'
+    | '/services'
     | '/_authenticated/admin'
     | '/_authenticated/calendar'
     | '/_authenticated/documents'
@@ -236,6 +248,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   InsightsRoute: typeof InsightsRoute
   PracticeAreasRoute: typeof PracticeAreasRoute
+  ServicesRoute: typeof ServicesRoute
   TeamSlugRoute: typeof TeamSlugRoute
   TeamIndexRoute: typeof TeamIndexRoute
 }
@@ -296,6 +309,13 @@ declare module '@tanstack/react-router' {
       path: '/practice-areas'
       fullPath: '/practice-areas'
       preLoaderRoute: typeof PracticeAreasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin': {
@@ -396,6 +416,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   InsightsRoute: InsightsRoute,
   PracticeAreasRoute: PracticeAreasRoute,
+  ServicesRoute: ServicesRoute,
   TeamSlugRoute: TeamSlugRoute,
   TeamIndexRoute: TeamIndexRoute,
 }

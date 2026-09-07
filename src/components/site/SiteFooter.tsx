@@ -97,6 +97,11 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link to="/services" className="hover:text-gold">
+                  {t("nav.services")}
+                </Link>
+              </li>
+              <li>
                 <Link to="/team" className="hover:text-gold">
                   {t("nav.team")}
                 </Link>

@@ -206,6 +206,28 @@ export function useFirm() {
 export const COPY = {
   en: {
     "practice.eyebrow": "Practice Areas",
+    "services.eyebrow": "Our Services",
+    "services.title": "Legal services & case submission",
+    "services.lead":
+      "Choose the practice area that fits your matter and submit your case online. A member of our legal team will review it and get back to you.",
+    "case.eyebrow": "Submit Your Case",
+    "case.title": "Tell us about your matter",
+    "case.lead":
+      "Share the essentials of your situation. We will review your submission confidentially and contact you about the next steps.",
+    "case.disclaimer":
+      "Submitting this form does not establish an attorney-client relationship. Please avoid sending highly sensitive details until an engagement is confirmed.",
+    "case.name": "Full name",
+    "case.phone": "Phone number",
+    "case.email": "Email",
+    "case.service": "Practice area",
+    "case.servicePlaceholder": "Select a practice area",
+    "case.matter": "Describe your case",
+    "case.matterPlaceholder": "Briefly describe what happened and what outcome you are looking for.",
+    "case.submit": "Submit Case",
+    "case.error": "Please check this field",
+    "case.toastTitle": "Case submitted",
+    "case.toastDesc":
+      "Thank you. Our legal team has received your submission and will contact you shortly.",
     "faq.eyebrow": "FAQ",
     "faq.title": "Frequently asked questions",
     "faq.lead": "Straightforward answers to the questions clients ask us most often.",
@@ -238,6 +260,27 @@ export const COPY = {
   },
   am: {
     "practice.eyebrow": "የሙያ ዘርፎች",
+    "services.eyebrow": "አገልግሎቶቻችን",
+    "services.title": "የሕግ አገልግሎቶች እና የጉዳይ ማስገባት",
+    "services.lead":
+      "ከጉዳይዎ ጋር የሚስማማውን የሙያ ዘርፍ ይምረጡ እና ጉዳይዎን በመስመር ላይ ያስገቡ። የሕግ ቡድናችን አባል ያከትበዋል እና ይመልሱልዎታል።",
+    "case.eyebrow": "ጉዳይዎን ያስገቡ",
+    "case.title": "ስለ ጉዳይዎ ይንገሩን",
+    "case.lead":
+      "ዋና ዋና መረጃዎችን ያጋሩን። ማስገባትዎን በምስጢር እንገምግመዋለን እና ስለ ቀጣዩ እርምጃ እናገኝዎታለን።",
+    "case.disclaimer":
+      "ይህን ቅጽ ማስገባት የጠበቃ-ደንበኛ ግንኙነት አይፈጥርም። ቃል ኪዳን እስኪፈጸም ድረስ በጣም ሚስጥራዊ መረጃዎችን እባክዎ ይቆጠቡ።",
+    "case.name": "ሙሉ ስም",
+    "case.phone": "ስልክ ቁጥር",
+    "case.email": "ኢሜይል",
+    "case.service": "የሙያ ዘርፍ",
+    "case.servicePlaceholder": "የሙያ ዘርፍ ይምረጡ",
+    "case.matter": "ጉዳይዎን ይግለጹ",
+    "case.matterPlaceholder": "ምን እንደተፈጠረ እና ምን ውጤት እንደሚፈልጉ በአጭሩ ይግለጹ።",
+    "case.submit": "ጉዳይ ያስገቡ",
+    "case.error": "እባክዎ ይህን መስክ ያረጋግጡ",
+    "case.toastTitle": "ጉዳይ ተልኳል",
+    "case.toastDesc": "እናመሰግናለን። የሕግ ቡድናችን ማስገባትዎን ተቀብሏል እና በቅርቡ እናገኝዎታለን።",
     "faq.eyebrow": "ተደጋጋሚ ጥያቄዎች",
     "faq.title": "ተደጋጋሚ ጥያቄዎች",
     "faq.lead": "ደንበኞች በተደጋጋሚ ለሚጠይቁት ጥያቄዎች ቀጥተኛ መልሶች።",
@@ -269,6 +312,27 @@ export const COPY = {
   },
   zh: {
     "practice.eyebrow": "业务领域",
+    "services.eyebrow": "我们的服务",
+    "services.title": "法律服务与案件提交",
+    "services.lead":
+      "选择适合您事务的业务领域，并在线提交您的案件。我们的法律团队将审阅后尽快与您联系。",
+    "case.eyebrow": "提交案件",
+    "case.title": "告诉我们您的情况",
+    "case.lead":
+      "请分享您的基本情况。我们将以保密方式审阅您的提交，并与您联系讨论后续步骤。",
+    "case.disclaimer":
+      "提交本表格并不构成委托代理关系。在正式确认委托之前，请勿发送高度敏感的信息。",
+    "case.name": "姓名",
+    "case.phone": "电话号码",
+    "case.email": "电子邮箱",
+    "case.service": "业务领域",
+    "case.servicePlaceholder": "请选择业务领域",
+    "case.matter": "描述您的案件",
+    "case.matterPlaceholder": "请简要描述事情的经过以及您期望的结果。",
+    "case.submit": "提交案件",
+    "case.error": "请检查此栏内容",
+    "case.toastTitle": "案件已提交",
+    "case.toastDesc": "感谢您。我们的法律团队已收到您的提交，并将尽快与您联系。",
     "faq.eyebrow": "常见问题",
     "faq.title": "常见问题解答",
     "faq.lead": "针对客户最常提出的问题给出直接、清晰的解答。",
