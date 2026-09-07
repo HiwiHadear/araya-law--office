@@ -42,12 +42,13 @@ function Index() {
       <section className="relative isolate overflow-hidden bg-navy">
         <img
           src={heroOffice}
-          alt="Boardroom of Araya Law Firm at dusk"
+          alt="Araya Kebede at his desk in the Araya Law Firm office in Addis Ababa"
           width={1920}
           height={1280}
-          className="absolute inset-0 h-full w-full object-cover opacity-45"
+          className="absolute inset-0 h-full w-full object-cover object-[70%_center] opacity-90"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/75 to-navy/10" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy/60 to-transparent" />
         <div className="relative mx-auto max-w-7xl px-5 py-28 sm:py-36 lg:px-8">
           <div className="animate-rise max-w-3xl">
             <p className="eyebrow text-gold">{t("hero.firm")}</p>
