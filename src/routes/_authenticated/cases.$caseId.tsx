@@ -179,6 +179,89 @@ function CaseDetail() {
       </header>
 
       {me?.isStaff && (
+        <section key={c.id + c.updated_at} className="border border-border bg-background p-6">
+          <h3 className="font-serif text-lg">Manage case</h3>
+          <p className="mt-1 text-xs text-muted-foreground">
+            Edit the case details or change its status — set it to Closed when the matter is
+            concluded.
+          </p>
+          <form
+            className="mt-4 grid gap-4 sm:grid-cols-2"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = new FormData(e.currentTarget);
+              const title = (form.get("title") as string)?.trim();
+              if (!title) {
+                toast.error("Title is required");
+                return;
+              }
+              updateCase.mutate({
+                title,
+                practice_area: (form.get("practice_area") as string) || null,
+                court: (form.get("court") as string)?.trim() || null,
+                description: (form.get("description") as string)?.trim() || null,
+                status: form.get("status") as CaseRow["status"],
+              });
+            }}
+          >
+            <div>
+              <Label htmlFor="title">Title</Label>
+              <Input id="title" name="title" defaultValue={c.title} required maxLength={160} />
+            </div>
+            <div>
+              <Label>Status</Label>
+              <Select name="status" defaultValue={c.status}>
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {CASE_STATUSES.map((s) => (
+                    <SelectItem key={s} value={s}>
+                      {STATUS_LABELS[s]}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <Label>Practice area</Label>
+              <Select name="practice_area" defaultValue={c.practice_area ?? ""}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select area" />
+                </SelectTrigger>
+                <SelectContent>
+                  {PRACTICE_AREAS.map((p) => (
+                    <SelectItem key={p.slug} value={p.title}>
+                      {p.title}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <Label htmlFor="court">Court</Label>
+              <Input id="court" name="court" defaultValue={c.court ?? ""} maxLength={120} />
+            </div>
+            <div className="sm:col-span-2">
+              <Label htmlFor="description">Description</Label>
+              <Textarea
+                id="description"
+                name="description"
+                rows={3}
+                defaultValue={c.description ?? ""}
+                maxLength={2000}
+              />
+            </div>
+            <div className="sm:col-span-2">
+              <Button type="submit" variant="gold" disabled={updateCase.isPending}>
+                Save changes
+              </Button>
+            </div>
+          </form>
+        </section>
+      )}
+
+      {me?.isStaff && (
         <section className="border border-border bg-background p-6">
           <h3 className="font-serif text-lg">Staff controls</h3>
           <div className="mt-4 flex items-center gap-3">
