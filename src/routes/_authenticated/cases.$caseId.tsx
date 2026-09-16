@@ -75,6 +75,25 @@ function CaseDetail() {
     onError: (e: Error) => toast.error(e.message),
   });
 
+  const updateCase = useMutation({
+    mutationFn: async (payload: {
+      title: string;
+      practice_area: string | null;
+      court: string | null;
+      description: string | null;
+      status: CaseRow["status"];
+    }) => {
+      const { error } = await supabase.from("cases").update(payload).eq("id", caseId);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      toast.success("Case updated");
+      void queryClient.invalidateQueries({ queryKey: ["case", caseId] });
+      void queryClient.invalidateQueries({ queryKey: ["cases"] });
+    },
+    onError: (e: Error) => toast.error(e.message),
+  });
+
   const addHearing = useMutation({
     mutationFn: async (payload: { title: string; scheduled_at: string; court: string }) => {
       const { error } = await supabase.from("hearings").insert({
