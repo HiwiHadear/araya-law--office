@@ -30,6 +30,7 @@ import {
   fetchHearings,
   formatDate,
   formatDateTime,
+  type CaseRow,
 } from "@/lib/portal-data";
 
 export const Route = createFileRoute("/_authenticated/cases/$caseId")({
