@@ -11,6 +11,7 @@ export type CaseRow = {
   client_id: string | null;
   lead_lawyer_id: string | null;
   opened_at: string;
+  updated_at: string;
 };
 
 export const CASE_STATUSES = ["intake", "active", "on_hold", "closed"] as const;
