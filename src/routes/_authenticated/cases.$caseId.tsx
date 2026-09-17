@@ -20,6 +20,7 @@ import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
 import { useCurrentUser } from "@/lib/auth";
+import { draftCaseNote } from "@/lib/case-notes.functions";
 import { PRACTICE_AREAS } from "@/lib/firm-data";
 import {
   CASE_STATUSES,
