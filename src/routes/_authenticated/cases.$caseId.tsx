@@ -258,6 +258,104 @@ function CaseDetail() {
               </Button>
             </div>
           </form>
+
+          <div className="mt-8 border-t border-border pt-6">
+            <h4 className="flex items-center gap-2 font-serif text-base">
+              <Sparkles className="h-4 w-4 text-gold" /> AI case note generator
+            </h4>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Jot down what happened in a few words. The assistant drafts a clear progress update
+              for the client — review it before saving.
+            </p>
+            <div className="mt-4 space-y-3">
+              <div>
+                <Label htmlFor="ai_points">What happened</Label>
+                <Textarea
+                  id="ai_points"
+                  rows={3}
+                  maxLength={1200}
+                  placeholder="e.g. filed statement of defence, next hearing set, waiting for client documents"
+                  value={aiPoints}
+                  onChange={(e) => setAiPoints(e.target.value)}
+                />
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <Select value={aiLanguage} onValueChange={(v) => setAiLanguage(v as AiLanguage)}>
+                  <SelectTrigger className="w-40">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="en">English</SelectItem>
+                    <SelectItem value="am">አማርኛ</SelectItem>
+                    <SelectItem value="zh">中文</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Button
+                  type="button"
+                  variant="outline"
+                  disabled={draftNote.isPending}
+                  onClick={() => {
+                    const points = aiPoints.trim();
+                    if (points.length < 3) {
+                      toast.error("Add a few words about what happened first");
+                      return;
+                    }
+                    draftNote.mutate({
+                      caseTitle: c.title,
+                      practiceArea: c.practice_area,
+                      court: c.court,
+                      status: STATUS_LABELS[c.status],
+                      keyPoints: points,
+                      language: aiLanguage,
+                    });
+                  }}
+                >
+                  {draftNote.isPending ? "Drafting…" : "Draft update"}
+                </Button>
+              </div>
+
+              {aiDraft && (
+                <div className="space-y-3">
+                  <Label htmlFor="ai_draft">Draft update (editable)</Label>
+                  <Textarea
+                    id="ai_draft"
+                    rows={7}
+                    maxLength={2000}
+                    value={aiDraft}
+                    onChange={(e) => setAiDraft(e.target.value)}
+                  />
+                  <div className="flex flex-wrap gap-3">
+                    <Button
+                      type="button"
+                      variant="gold"
+                      disabled={addUpdate.isPending}
+                      onClick={() => {
+                        const note = aiDraft.trim();
+                        if (!note) {
+                          toast.error("The draft is empty");
+                          return;
+                        }
+                        addUpdate.mutate(note, {
+                          onSuccess: () => {
+                            setAiDraft("");
+                            setAiPoints("");
+                          },
+                        });
+                      }}
+                    >
+                      Save as case update
+                    </Button>
+                    <Button type="button" variant="ghost" onClick={() => setAiDraft("")}>
+                      Discard
+                    </Button>
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    Saved with the “visible to the client” setting in Staff controls below.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
         </section>
       )}
 
