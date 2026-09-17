@@ -197,6 +197,15 @@
   background-image: var(--gradient-navy);
 }
 
+/* Ethiopian tibeb-inspired repeating diamond band (gold on transparent) */
+@utility pattern-tibeb {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Cpath d='M0 7 L7 1 L14 7 L7 13 Z' fill='none' stroke='%23C9A227' stroke-width='1.1'/%3E%3Cpath d='M14 7 L21 1 L28 7 L21 13 Z' fill='none' stroke='%23C9A227' stroke-width='1.1'/%3E%3Ccircle cx='7' cy='7' r='1.1' fill='%23C9A227'/%3E%3Ccircle cx='21' cy='7' r='1.1' fill='%23C9A227'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 28px 14px;
+  height: 14px;
+}
+
 @utility animate-rise {
   animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
