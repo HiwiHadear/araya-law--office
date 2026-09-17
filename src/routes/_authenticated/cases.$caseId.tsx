@@ -40,12 +40,31 @@ export const Route = createFileRoute("/_authenticated/cases/$caseId")({
   component: CaseDetail,
 });
 
+type AiLanguage = "en" | "am" | "zh";
+
 function CaseDetail() {
   const { caseId } = Route.useParams();
   const { data: me } = useCurrentUser();
   const queryClient = useQueryClient();
   const [visibleToClient, setVisibleToClient] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [aiPoints, setAiPoints] = useState("");
+  const [aiDraft, setAiDraft] = useState("");
+  const [aiLanguage, setAiLanguage] = useState<AiLanguage>("en");
+  const generateNote = useServerFn(draftCaseNote);
+
+  const draftNote = useMutation({
+    mutationFn: async (input: {
+      caseTitle: string;
+      practiceArea: string | null;
+      court: string | null;
+      status: string;
+      keyPoints: string;
+      language: AiLanguage;
+    }) => generateNote({ data: input }),
+    onSuccess: (result) => setAiDraft(result.note),
+    onError: (e: Error) => toast.error(e.message || "Could not draft the update"),
+  });
 
   const caseQuery = useQuery({ queryKey: ["case", caseId], queryFn: () => fetchCase(caseId) });
   const updates = useQuery({
