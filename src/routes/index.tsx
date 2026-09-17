@@ -7,6 +7,7 @@ import { ContactSection } from "@/components/site/ContactSection";
 import { FaqSection } from "@/components/site/FaqSection";
 import { Icon } from "@/components/site/Icon";
 import { InsightsGrid } from "@/components/site/InsightsGrid";
+import { PatternDivider } from "@/components/site/PatternDivider";
 import { PracticeAreasGrid } from "@/components/site/PracticeAreasGrid";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { TeamGrid } from "@/components/site/TeamGrid";
@@ -74,6 +75,8 @@ function Index() {
         </div>
       </section>
 
+      <PatternDivider className="bg-background py-6" />
+
       <section className="bg-background py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
           <div>
@@ -112,6 +115,8 @@ function Index() {
           />
         </div>
       </section>
+
+      <PatternDivider className="bg-surface py-6" />
 
       <section className="bg-surface py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
