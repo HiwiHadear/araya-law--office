@@ -137,6 +137,8 @@ function Index() {
         </div>
       </section>
 
+      <PatternDivider className="bg-background py-6" />
+
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeading
@@ -155,6 +157,8 @@ function Index() {
 
       <WhyUsSection />
 
+      <PatternDivider className="bg-background py-6" />
+
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeading
@@ -169,6 +173,8 @@ function Index() {
       </section>
 
       <ConsultationSection />
+
+      <PatternDivider className="bg-background py-6" />
 
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">

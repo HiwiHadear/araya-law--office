@@ -11,6 +11,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-navy text-navy-foreground">
+      <div aria-hidden className="pattern-tibeb opacity-70" />
       <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
