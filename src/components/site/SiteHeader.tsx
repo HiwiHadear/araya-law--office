@@ -128,6 +128,8 @@ export function SiteHeader() {
         </div>
       </div>
 
+      <div aria-hidden className="pattern-tibeb opacity-70" />
+
       {open && (
         <div className="border-t border-navy-foreground/10 bg-navy xl:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col px-5 py-2">
