@@ -128,7 +128,7 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div aria-hidden className="pattern-tibeb" />
+      <div aria-hidden className="pattern-header" />
 
       {open && (
         <div className="border-t border-navy-foreground/10 bg-navy xl:hidden">
