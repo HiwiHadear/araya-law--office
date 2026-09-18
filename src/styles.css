@@ -206,12 +206,12 @@
   height: 14px;
 }
 
-/* Ethiopian tibeb-inspired header band: zigzag with dotted accents in gold */
+/* Ethiopian tibeb-inspired header band: solid filled chevron row in gold */
 @utility pattern-header {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='14' viewBox='0 0 32 14'%3E%3Cpath d='M0 12 L8 2 L16 12 L24 2 L32 12' fill='none' stroke='%23C9A227' stroke-width='1.2'/%3E%3Ccircle cx='8' cy='2' r='1' fill='%23C9A227'/%3E%3Ccircle cx='24' cy='2' r='1' fill='%23C9A227'/%3E%3Ccircle cx='16' cy='12' r='1' fill='%23C9A227'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='14' viewBox='0 0 20 14'%3E%3Cpath d='M0 14 L5 4 L10 14 L15 4 L20 14 Z' fill='%23C9A227'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: center;
-  background-size: 32px 14px;
+  background-size: 20px 14px;
   height: 14px;
 }
 
