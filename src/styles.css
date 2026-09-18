@@ -206,12 +206,12 @@
   height: 14px;
 }
 
-/* Ethiopian-inspired header band: alternating Greek-key / meander and star motif in gold */
+/* Ethiopian tibeb-inspired header band: zigzag with dotted accents in gold */
 @utility pattern-header {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='14' viewBox='0 0 40 14'%3E%3Cpath d='M2 2 H8 V5 H5 V9 H8 V12 H2 Z' fill='none' stroke='%23C9A227' stroke-width='1'/%3E%3Cpath d='M20 7 L22.5 2 L25 7 L22.5 12 Z' fill='none' stroke='%23C9A227' stroke-width='1'/%3E%3Cpath d='M32 2 H38 V5 H35 V9 H38 V12 H32 Z' fill='none' stroke='%23C9A227' stroke-width='1'/%3E%3Cpath d='M20 7 L22.5 2 L25 7 L22.5 12 Z' fill='none' stroke='%23C9A227' stroke-width='1'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='14' viewBox='0 0 32 14'%3E%3Cpath d='M0 12 L8 2 L16 12 L24 2 L32 12' fill='none' stroke='%23C9A227' stroke-width='1.2'/%3E%3Ccircle cx='8' cy='2' r='1' fill='%23C9A227'/%3E%3Ccircle cx='24' cy='2' r='1' fill='%23C9A227'/%3E%3Ccircle cx='16' cy='12' r='1' fill='%23C9A227'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: center;
-  background-size: 40px 14px;
+  background-size: 32px 14px;
   height: 14px;
 }
 
