@@ -1,5 +1,4 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import arayaLogo from "@/assets/araya-logo.png.asset.json";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -127,7 +126,7 @@ function AuthPage() {
         <div className="border border-border bg-background p-8 shadow-elegant">
           <div className="flex items-center gap-3">
             <img
-              src={arayaLogo.url}
+              src="/araya-logo.png"
               alt="Araya Law Firm seal"
               className="h-11 w-11 shrink-0 object-contain"
             />

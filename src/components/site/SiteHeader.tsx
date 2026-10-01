@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import arayaLogo from "@/assets/araya-logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { FIRM } from "@/lib/firm-data";
 import { useLang } from "@/lib/i18n";
@@ -40,7 +39,7 @@ export function SiteHeader() {
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:px-8">
         <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
           <img
-            src={arayaLogo.url}
+            src="/araya-logo.png"
             alt="Araya Law Firm seal"
             className="h-11 w-11 shrink-0 object-contain"
           />

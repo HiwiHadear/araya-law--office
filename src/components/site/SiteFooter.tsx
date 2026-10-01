@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitter, Youtube } from "lucide-react";
 
-import arayaLogo from "@/assets/araya-logo.png.asset.json";
 import { useFirm } from "@/lib/firm-content";
 import { useLang } from "@/lib/i18n";
 
@@ -17,7 +16,7 @@ export function SiteFooter() {
           <div>
             <div className="flex items-center gap-3">
               <img
-                src={arayaLogo.url}
+                src="/araya-logo.png"
                 alt="Araya Law Firm seal"
                 className="h-11 w-11 shrink-0 object-contain"
               />
