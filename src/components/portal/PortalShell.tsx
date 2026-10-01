@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 
-import arayaLogo from "@/assets/araya-logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { ROLE_LABELS, useCurrentUser, useSignOut } from "@/lib/auth";
 
@@ -33,7 +32,7 @@ export function PortalShell({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 lg:px-8">
           <div className="flex items-center gap-4">
             <img
-              src={arayaLogo.url}
+              src="/araya-logo.png"
               alt="Araya Law Firm seal"
               className="h-12 w-12 shrink-0 object-contain"
             />

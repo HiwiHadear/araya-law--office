@@ -1,6 +1,5 @@
 import { Clock, User } from "lucide-react";
 
-import arayaLogo from "@/assets/araya-logo.png.asset.json";
 import { ARTICLES } from "@/lib/firm-data";
 
 export function InsightsGrid({ limit }: { limit?: number }) {
@@ -12,7 +11,7 @@ export function InsightsGrid({ limit }: { limit?: number }) {
         <article key={a.slug} className="group flex flex-col border border-border bg-background">
           <div className="relative flex h-40 items-end overflow-hidden bg-gradient-navy p-6">
             <img
-              src={arayaLogo.url}
+              src="/araya-logo.png"
               alt=""
               aria-hidden="true"
               loading="lazy"
