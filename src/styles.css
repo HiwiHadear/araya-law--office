@@ -290,6 +290,34 @@
     box-shadow: var(--interaction-button-shadow);
   }
 
+  /* Site-wide: every card, panel, list row, image and button on all pages */
+  main :is(article, section.border, div.border.bg-background, li, form.border):not(.content-hover) {
+    transition: background-color 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+  }
+  main :is(article, section.border, div.border.bg-background, form.border):not(.content-hover):hover {
+    background-image: var(--interaction-wash);
+    box-shadow: var(--interaction-shadow);
+    border-color: color-mix(in oklab, var(--gold) 55%, transparent);
+  }
+  main li:not(.content-hover):hover {
+    background-image: var(--interaction-wash);
+  }
+  main img:not([aria-hidden="true"]) {
+    transition: filter 350ms ease;
+  }
+  main img:not([aria-hidden="true"]):hover {
+    filter: saturate(1.12) brightness(1.04);
+  }
+  main a:not(.interactive-button):not(.content-hover):hover {
+    color: var(--royal);
+  }
+  main button:not(:disabled) {
+    transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+  }
+  main button:not(:disabled):hover {
+    box-shadow: var(--interaction-button-shadow);
+  }
+
   .image-hover:hover {
     filter: saturate(1.12) brightness(1.03);
     box-shadow: var(--interaction-shadow);
