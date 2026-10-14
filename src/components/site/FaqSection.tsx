@@ -21,7 +21,7 @@ export function FaqSection() {
         />
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((f, i) => (
-            <AccordionItem key={f.q} value={`item-${i}`}>
+            <AccordionItem key={f.q} value={`item-${i}`} className="content-hover">
               <AccordionTrigger className="text-left font-serif text-lg text-navy hover:no-underline">
                 {f.q}
               </AccordionTrigger>
