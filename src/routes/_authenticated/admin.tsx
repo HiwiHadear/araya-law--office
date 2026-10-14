@@ -17,7 +17,14 @@ import { ALL_ROLES, ROLE_LABELS, type AppRole, useCurrentUser } from "@/lib/auth
 import { fetchAppointments, fetchProfiles, formatDate } from "@/lib/portal-data";
 
 export const Route = createFileRoute("/_authenticated/admin")({
-  head: () => ({ meta: [{ title: "Administration — Araya Law Firm" }] }),
+  head: () => ({ meta: [
+    { title: "Administration — Araya Law Firm" },
+    { name: "description", content: "Manage Araya Law Firm portal access and consultation requests." },
+    { property: "og:title", content: "Administration — Araya Law Firm" },
+    { property: "og:description", content: "Manage Araya Law Firm portal access and consultation requests." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
+  ] }),
   component: AdminPage,
 });
 

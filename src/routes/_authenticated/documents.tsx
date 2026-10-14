@@ -7,7 +7,14 @@ import { Button } from "@/components/ui/button";
 import { downloadDocument, fetchCases, fetchDocuments, formatDateTime } from "@/lib/portal-data";
 
 export const Route = createFileRoute("/_authenticated/documents")({
-  head: () => ({ meta: [{ title: "Document Center — Araya Law Firm" }] }),
+  head: () => ({ meta: [
+    { title: "Document Center — Araya Law Firm" },
+    { name: "description", content: "Access privately shared legal documents in your Araya Law Firm portal." },
+    { property: "og:title", content: "Document Center — Araya Law Firm" },
+    { property: "og:description", content: "Access privately shared legal documents in your Araya Law Firm portal." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
+  ] }),
   component: DocumentsPage,
 });
 
