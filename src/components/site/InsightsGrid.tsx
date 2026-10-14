@@ -8,7 +8,7 @@ export function InsightsGrid({ limit }: { limit?: number }) {
   return (
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {items.map((a) => (
-        <article key={a.slug} className="group flex flex-col border border-border bg-background">
+        <article key={a.slug} className="content-hover group flex flex-col border border-border bg-background">
           <div className="relative flex h-40 items-end overflow-hidden bg-gradient-navy p-6">
             <img
               src="/araya-logo.png"

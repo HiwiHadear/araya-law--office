@@ -5,7 +5,14 @@ import { Badge } from "@/components/ui/badge";
 import { fetchCases, fetchHearings, formatDateTime } from "@/lib/portal-data";
 
 export const Route = createFileRoute("/_authenticated/calendar")({
-  head: () => ({ meta: [{ title: "Court Calendar — Araya Law Firm" }] }),
+  head: () => ({ meta: [
+    { title: "Court Calendar — Araya Law Firm" },
+    { name: "description", content: "Review hearing dates and court locations for your Araya Law Firm matters." },
+    { property: "og:title", content: "Court Calendar — Araya Law Firm" },
+    { property: "og:description", content: "Review hearing dates and court locations for your Araya Law Firm matters." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
+  ] }),
   component: CalendarPage,
 });
 

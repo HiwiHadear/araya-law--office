@@ -82,6 +82,10 @@
   --shadow-elegant: 0 24px 60px -30px oklch(0.256 0.045 251.8 / 0.35);
   --shadow-card: 0 1px 2px oklch(0.256 0.045 251.8 / 0.06), 0 12px 32px -20px oklch(0.256 0.045 251.8 / 0.22);
   --gradient-navy: linear-gradient(140deg, oklch(0.256 0.045 251.8), oklch(0.32 0.058 250));
+  --interaction-wash: linear-gradient(125deg, color-mix(in oklab, var(--gold) 12%, var(--background)), color-mix(in oklab, var(--royal) 8%, var(--background)));
+  --interaction-edge: linear-gradient(90deg, var(--gold), var(--royal), var(--gold));
+  --interaction-shadow: 0 14px 28px -18px color-mix(in oklab, var(--royal) 45%, transparent);
+  --interaction-button-shadow: 0 6px 16px -8px color-mix(in oklab, var(--gold) 70%, transparent);
   --background: oklch(1 0 0);
   --foreground: oklch(0.246 0.02 254);
   --card: oklch(1 0 0);
@@ -166,7 +170,7 @@
   h1, h2, h3, h4, blockquote {
     font-family: var(--font-serif);
     font-weight: 600;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
 }
 
@@ -222,4 +226,96 @@
 @keyframes rise {
   from { opacity: 0; transform: translateY(18px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Premium interaction treatments, shared by public content and controls. */
+.content-hover {
+  position: relative;
+  transition: background-color 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+}
+
+.content-hover::after {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--interaction-edge);
+  content: "";
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease;
+}
+
+.content-hover h3,
+.content-hover svg,
+.interactive-button svg {
+  transition: color 250ms ease, transform 250ms ease;
+}
+
+.interactive-button {
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease,
+    box-shadow 200ms ease, transform 200ms ease;
+}
+
+.image-hover {
+  transition: filter 350ms ease, box-shadow 350ms ease;
+}
+
+.content-hover:focus-within::after {
+  transform: scaleX(1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .content-hover:hover {
+    background-image: var(--interaction-wash);
+    box-shadow: var(--interaction-shadow);
+    transform: translateY(-3px);
+    z-index: 1;
+  }
+
+  .content-hover:hover::after {
+    transform: scaleX(1);
+  }
+
+  .content-hover:hover h3 {
+    color: var(--royal);
+  }
+
+  .content-hover:hover svg {
+    transform: translateY(-2px);
+  }
+
+  .interactive-button:not(:disabled):not([aria-disabled="true"]):hover {
+    transform: translateY(-2px);
+    box-shadow: var(--interaction-button-shadow);
+  }
+
+  .image-hover:hover {
+    filter: saturate(1.12) brightness(1.03);
+    box-shadow: var(--interaction-shadow);
+  }
+
+  header a:not(.interactive-button):hover,
+  footer a:not(.interactive-button):hover {
+    color: var(--gold);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise { animation: none; }
+  .content-hover,
+  .content-hover::after,
+  .content-hover h3,
+  .content-hover svg,
+  .interactive-button,
+  .interactive-button svg,
+  .image-hover,
+  .group img {
+    transition: none;
+    transform: none;
+  }
+  .content-hover:hover,
+  .interactive-button:not(:disabled):hover,
+  .content-hover:hover svg,
+  .group:hover img { transform: none; }
 }

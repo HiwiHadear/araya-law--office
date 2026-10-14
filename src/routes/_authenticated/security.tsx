@@ -10,7 +10,14 @@ import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_authenticated/security")({
-  head: () => ({ meta: [{ title: "Security & Two-Factor — Araya Law Firm" }] }),
+  head: () => ({ meta: [
+    { title: "Security & Two-Factor — Araya Law Firm" },
+    { name: "description", content: "Manage two-factor authentication for your Araya Law Firm account." },
+    { property: "og:title", content: "Security & Two-Factor — Araya Law Firm" },
+    { property: "og:description", content: "Manage two-factor authentication for your Araya Law Firm account." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
+  ] }),
   component: SecurityPage,
 });
 

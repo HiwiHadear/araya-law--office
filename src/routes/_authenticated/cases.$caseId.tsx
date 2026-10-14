@@ -36,7 +36,14 @@ import {
 } from "@/lib/portal-data";
 
 export const Route = createFileRoute("/_authenticated/cases/$caseId")({
-  head: () => ({ meta: [{ title: "Case File — Araya Law Firm" }] }),
+  head: () => ({ meta: [
+    { title: "Case File — Araya Law Firm" },
+    { name: "description", content: "Access case details, progress updates, hearings, and documents at Araya Law Firm." },
+    { property: "og:title", content: "Case File — Araya Law Firm" },
+    { property: "og:description", content: "Access case details, progress updates, hearings, and documents at Araya Law Firm." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
+  ] }),
   component: CaseDetail,
 });
 

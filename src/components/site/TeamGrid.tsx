@@ -10,7 +10,7 @@ export function TeamGrid() {
   return (
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {lawyers.map((l) => (
-        <article key={l.slug} className="group flex flex-col bg-background shadow-card">
+        <article key={l.slug} className="content-hover group flex flex-col bg-background shadow-card">
           <div className="overflow-hidden bg-navy">
             <img
               src={l.photo}

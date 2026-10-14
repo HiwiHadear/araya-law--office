@@ -15,7 +15,7 @@ export function PracticeAreasGrid({ limit }: { limit?: number }) {
         <Link
           key={area.slug}
           to="/book"
-          className="group flex flex-col bg-background p-8 transition-colors hover:bg-surface"
+          className="content-hover group flex flex-col bg-background p-8 transition-colors hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold"
         >
           <span className="grid h-12 w-12 place-items-center border border-gold/40 text-gold transition-colors group-hover:bg-gold group-hover:text-gold-foreground">
             <Icon name={area.icon} className="h-5 w-5" />

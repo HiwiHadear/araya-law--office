@@ -22,7 +22,14 @@ import { PRACTICE_AREAS } from "@/lib/firm-data";
 import { CASE_STATUSES, STATUS_LABELS, fetchCases, fetchProfiles, formatDate } from "@/lib/portal-data";
 
 export const Route = createFileRoute("/_authenticated/cases/")({
-  head: () => ({ meta: [{ title: "Case Management — Araya Law Firm" }] }),
+  head: () => ({ meta: [
+    { title: "Case Management — Araya Law Firm" },
+    { name: "description", content: "Review and manage legal matters in the Araya Law Firm client portal." },
+    { property: "og:title", content: "Case Management — Araya Law Firm" },
+    { property: "og:description", content: "Review and manage legal matters in the Araya Law Firm client portal." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
+  ] }),
   component: CasesPage,
 });
 

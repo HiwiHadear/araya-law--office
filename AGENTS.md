@@ -9,3 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 - Static export: router uses trailingSlash "preserve" so prerendered folder/index.html pages don't redirect-loop during the build.
+- Share content and button hover treatments through global semantic interaction tokens and opt-in classes; this keeps public pages consistent and honors reduced motion without pointer tracking.

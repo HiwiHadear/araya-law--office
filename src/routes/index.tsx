@@ -111,7 +111,7 @@ function Index() {
             loading="lazy"
             width={1200}
             height={1408}
-            className="aspect-4/5 w-full object-cover shadow-elegant"
+            className="image-hover aspect-4/5 w-full object-cover shadow-elegant"
           />
         </div>
       </section>
@@ -127,7 +127,7 @@ function Index() {
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {coreValues.map((v) => (
-              <div key={v.title} className="bg-background p-7 shadow-card">
+              <div key={v.title} className="content-hover bg-background p-7 shadow-card">
                 <Icon name={v.icon} className="h-6 w-6 text-gold" />
                 <h3 className="mt-5 text-lg text-navy">{v.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.text}</p>
