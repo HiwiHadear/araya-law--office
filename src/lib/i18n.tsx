@@ -27,6 +27,10 @@ const DICT = {
     "hero.lead":
       "Professional legal representation and trusted legal advisory services tailored to individuals, businesses, and organizations.",
     "hero.trust": "Confidentiality • Professionalism • Client-Focused Representation",
+    "stats.years": "Years of Practice",
+    "stats.cases": "Cases Handled",
+    "stats.areas": "Practice Areas",
+    "stats.langs": "Languages Spoken",
     "footer.tagline": "Professional legal services you can trust.",
     "menu": "Menu",
     "portal": "Client Portal",
@@ -57,6 +61,10 @@ const DICT = {
     "hero.lead":
       "ለግለሰቦች፣ ለንግድ ድርጅቶችና ለተቋማት የተዘጋጀ ሙያዊ የሕግ ውክልናና አስተማማኝ የሕግ አማካሪ አገልግሎት።",
     "hero.trust": "ምስጢራዊነት • ሙያዊነት • በደንበኛ ላይ ያተኮረ ውክልና",
+    "stats.years": "የልምድ ዓመታት",
+    "stats.cases": "የተ handles ጉዳዮች",
+    "stats.areas": "የሙያ ዘርፎች",
+    "stats.langs": "የሚናገር ቋንቋዎች",
     "footer.tagline": "ሊታመን የሚችል ሙያዊ የሕግ አገልግሎት።",
     "menu": "ማውጫ",
     "portal": "የደንበኛ ፖርታል",
