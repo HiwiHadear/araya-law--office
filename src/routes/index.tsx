@@ -9,7 +9,9 @@ import { Icon } from "@/components/site/Icon";
 import { InsightsGrid } from "@/components/site/InsightsGrid";
 import { PatternDivider } from "@/components/site/PatternDivider";
 import { PracticeAreasGrid } from "@/components/site/PracticeAreasGrid";
+import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
+import { StatsBand } from "@/components/site/StatsBand";
 import { TeamGrid } from "@/components/site/TeamGrid";
 import { WhyUsSection } from "@/components/site/WhyUsSection";
 import { Button } from "@/components/ui/button";
@@ -46,7 +48,7 @@ function Index() {
           alt="Araya Kebede at his desk in the Araya Law Firm office in Addis Ababa"
           width={1920}
           height={1280}
-          className="absolute inset-0 h-full w-full object-cover object-[70%_center] opacity-90"
+          className="animate-hero-zoom absolute inset-0 h-full w-full object-cover object-[70%_center] opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/75 to-navy/10" />
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy/60 to-transparent" />
@@ -75,11 +77,13 @@ function Index() {
         </div>
       </section>
 
+      <StatsBand />
+
       <PatternDivider className="bg-background py-6" />
 
       <section className="bg-background py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
-          <div>
+          <Reveal>
             <SectionHeading
               eyebrow="About the Firm"
               title="Professional. Ethical. Client-focused."
