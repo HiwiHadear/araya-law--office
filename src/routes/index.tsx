@@ -9,7 +9,9 @@ import { Icon } from "@/components/site/Icon";
 import { InsightsGrid } from "@/components/site/InsightsGrid";
 import { PatternDivider } from "@/components/site/PatternDivider";
 import { PracticeAreasGrid } from "@/components/site/PracticeAreasGrid";
+import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
+import { StatsBand } from "@/components/site/StatsBand";
 import { TeamGrid } from "@/components/site/TeamGrid";
 import { WhyUsSection } from "@/components/site/WhyUsSection";
 import { Button } from "@/components/ui/button";
@@ -46,7 +48,7 @@ function Index() {
           alt="Araya Kebede at his desk in the Araya Law Firm office in Addis Ababa"
           width={1920}
           height={1280}
-          className="absolute inset-0 h-full w-full object-cover object-[70%_center] opacity-90"
+          className="animate-hero-zoom absolute inset-0 h-full w-full object-cover object-[70%_center] opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/75 to-navy/10" />
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy/60 to-transparent" />
@@ -75,11 +77,13 @@ function Index() {
         </div>
       </section>
 
+      <StatsBand />
+
       <PatternDivider className="bg-background py-6" />
 
       <section className="bg-background py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
-          <div>
+          <Reveal>
             <SectionHeading
               eyebrow="About the Firm"
               title="Professional. Ethical. Client-focused."
@@ -104,15 +108,17 @@ function Index() {
             <Button asChild variant="outlineNavy" size="lg" className="mt-10">
               <Link to="/about">More About Us</Link>
             </Button>
-          </div>
-          <img
-            src={aboutDetail}
-            alt="Brass scales of justice beside leather-bound law books"
-            loading="lazy"
-            width={1200}
-            height={1408}
-            className="image-hover aspect-4/5 w-full object-cover shadow-elegant"
-          />
+          </Reveal>
+          <Reveal delay={150}>
+            <img
+              src={aboutDetail}
+              alt="Brass scales of justice beside leather-bound law books"
+              loading="lazy"
+              width={1200}
+              height={1408}
+              className="image-hover aspect-4/5 w-full object-cover shadow-elegant"
+            />
+          </Reveal>
         </div>
       </section>
 
@@ -120,18 +126,22 @@ function Index() {
 
       <section className="bg-surface py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <SectionHeading
-            eyebrow="Core Values"
-            title="The standards behind every mandate"
-            align="center"
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Core Values"
+              title="The standards behind every mandate"
+              align="center"
+            />
+          </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-            {coreValues.map((v) => (
-              <div key={v.title} className="content-hover bg-background p-7 shadow-card">
-                <Icon name={v.icon} className="h-6 w-6 text-gold" />
-                <h3 className="mt-5 text-lg text-navy">{v.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.text}</p>
-              </div>
+            {coreValues.map((v, i) => (
+              <Reveal key={v.title} delay={i * 90}>
+                <div className="content-hover h-full bg-background p-7 shadow-card">
+                  <Icon name={v.icon} className="h-6 w-6 text-gold" />
+                  <h3 className="mt-5 text-lg text-navy">{v.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.text}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -141,14 +151,16 @@ function Index() {
 
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <SectionHeading
-            eyebrow="Practice Areas"
-            title="Legal services across ten core disciplines"
-            lead="Focused expertise, coordinated across teams when a matter demands more than one discipline."
-          />
-          <div className="mt-14">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Practice Areas"
+              title="Legal services across ten core disciplines"
+              lead="Focused expertise, coordinated across teams when a matter demands more than one discipline."
+            />
+          </Reveal>
+          <Reveal delay={120} className="mt-14">
             <PracticeAreasGrid limit={6} />
-          </div>
+          </Reveal>
           <Button asChild variant="outlineNavy" size="lg" className="mt-10">
             <Link to="/practice-areas">All Practice Areas</Link>
           </Button>
@@ -161,14 +173,16 @@ function Index() {
 
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <SectionHeading
-            eyebrow="Our Legal Team"
-            title="Experienced counsel, personally accountable"
-            lead="Each matter is led by a named attorney who remains your point of contact from instruction to resolution."
-          />
-          <div className="mt-14">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Our Legal Team"
+              title="Experienced counsel, personally accountable"
+              lead="Each matter is led by a named attorney who remains your point of contact from instruction to resolution."
+            />
+          </Reveal>
+          <Reveal delay={120} className="mt-14">
             <TeamGrid />
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -178,14 +192,16 @@ function Index() {
 
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <SectionHeading
-            eyebrow="Legal Insights"
-            title="Latest articles from our knowledge center"
-            lead="Practical guidance on Ethiopian law, written for clients rather than lawyers."
-          />
-          <div className="mt-14">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Legal Insights"
+              title="Latest articles from our knowledge center"
+              lead="Practical guidance on Ethiopian law, written for clients rather than lawyers."
+            />
+          </Reveal>
+          <Reveal delay={120} className="mt-14">
             <InsightsGrid limit={3} />
-          </div>
+          </Reveal>
           <Button asChild variant="outlineNavy" size="lg" className="mt-10">
             <Link to="/insights">Read All Insights</Link>
           </Button>

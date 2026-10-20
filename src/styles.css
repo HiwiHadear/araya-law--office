@@ -228,6 +228,41 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Slow cinematic zoom for the hero photograph */
+@utility animate-hero-zoom {
+  animation: hero-zoom 24s ease-out both;
+}
+
+@keyframes hero-zoom {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+
+/* Scroll-reveal: hidden until .reveal-visible is added by the Reveal component */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gold rule grows in when its section heading scrolls into view */
+.reveal .gold-rule {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
+}
+
+.reveal-visible .gold-rule {
+  transform: scaleX(1);
+}
+
 /* Premium interaction treatments, shared by public content and controls. */
 .content-hover {
   position: relative;
@@ -330,7 +365,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-rise { animation: none; }
+  .animate-rise,
+  .animate-hero-zoom { animation: none; }
+  .reveal,
+  .reveal .gold-rule {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
   .content-hover,
   .content-hover::after,
   .content-hover h3,
