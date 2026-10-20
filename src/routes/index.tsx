@@ -173,14 +173,16 @@ function Index() {
 
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <SectionHeading
-            eyebrow="Our Legal Team"
-            title="Experienced counsel, personally accountable"
-            lead="Each matter is led by a named attorney who remains your point of contact from instruction to resolution."
-          />
-          <div className="mt-14">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Our Legal Team"
+              title="Experienced counsel, personally accountable"
+              lead="Each matter is led by a named attorney who remains your point of contact from instruction to resolution."
+            />
+          </Reveal>
+          <Reveal delay={120} className="mt-14">
             <TeamGrid />
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -190,14 +192,16 @@ function Index() {
 
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <SectionHeading
-            eyebrow="Legal Insights"
-            title="Latest articles from our knowledge center"
-            lead="Practical guidance on Ethiopian law, written for clients rather than lawyers."
-          />
-          <div className="mt-14">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Legal Insights"
+              title="Latest articles from our knowledge center"
+              lead="Practical guidance on Ethiopian law, written for clients rather than lawyers."
+            />
+          </Reveal>
+          <Reveal delay={120} className="mt-14">
             <InsightsGrid limit={3} />
-          </div>
+          </Reveal>
           <Button asChild variant="outlineNavy" size="lg" className="mt-10">
             <Link to="/insights">Read All Insights</Link>
           </Button>
