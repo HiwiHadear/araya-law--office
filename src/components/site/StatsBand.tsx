@@ -8,7 +8,7 @@ const STATS: Stat[] = [
   { value: 15, suffix: "+", labelKey: "stats.years" },
   { value: 500, suffix: "+", labelKey: "stats.cases" },
   { value: 10, suffix: "", labelKey: "stats.areas" },
-  { value: 3, suffix: "", labelKey: "stats.langs" },
+  { value: 4, suffix: "", labelKey: "stats.langs" },
 ];
 
 function CountUp({ target, suffix, active }: { target: number; suffix: string; active: boolean }) {

@@ -96,6 +96,16 @@ export function SiteHeader() {
             >
               中文
             </button>
+            <span className="text-navy-foreground/30">|</span>
+            <button
+              onClick={() => setLang("ti")}
+              className={cn(
+                "cursor-pointer px-1 transition-colors",
+                lang === "ti" ? "text-gold" : "text-navy-foreground/60 hover:text-navy-foreground",
+              )}
+            >
+              ትግ
+            </button>
           </div>
 
           <Link
@@ -174,6 +184,16 @@ export function SiteHeader() {
                   )}
                 >
                   中文
+                </button>
+                <span className="text-navy-foreground/30">|</span>
+                <button
+                  onClick={() => setLang("ti")}
+                  className={cn(
+                    "cursor-pointer px-1",
+                    lang === "ti" ? "text-gold" : "text-navy-foreground/60",
+                  )}
+                >
+                  ትግ
                 </button>
               </div>
               <div className="flex items-center gap-3">

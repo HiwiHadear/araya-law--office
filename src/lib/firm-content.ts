@@ -162,44 +162,256 @@ const ZH_FIRM = {
 
 const zhTerm = (s: string) => ZH_TERMS[s] ?? s;
 
+/** Tigrinya (ትግርኛ) translations of the firm's content. Keyed by slug/title. */
+const TI_PRACTICE: Record<string, { title: string; description: string }> = {
+  "civil-litigation": {
+    title: "ሲቪላዊ ፍርዳዊ ጉዳያት",
+    description:
+      "ኣብ ኩሎም ደረጃታት ቤት ፍርዲ ሲቪላዊ ግርጭታት፣ ናይ ዕዳ ተበጻሕቲ፣ ናይ ውዕል ግርጭታትን ዝተኣሳሰሩ ፍርዳዊ መስርሓትን ምክልኻል።",
+  },
+  "corporate-commercial": {
+    title: "ኮርፖሬትን ንግድን ሕጊ",
+    description:
+      "ንኩባንያታት፣ ንትካላትን ንሽርክታትን ኣብ ውዕላትን ንግዳዊ ስራሕቲን ሕጋዊ ደገፍ ምሃብ።",
+  },
+  "contract-law": {
+    title: "ናይ ውዕል ሕጊ",
+    description: "ናይ ስምምዓትን ውዕላትን ምድላው፣ ምጽራይ፣ ምዝርራብን ትርጉም ኩነታትን።",
+  },
+  "property-real-estate": {
+    title: "ናይ ንብረትን ምድርን ሕጊ",
+    description: "ኣብ ናይ ንብረት ስግግር፣ ዋንነት፣ ኪራይን ዝተኣሳሰሩ ግርጭታትን ሕጋዊ ደገፍ።",
+  },
+  "family-law": {
+    title: "ናይ ስድራ ቤት ሕጊ",
+    description:
+      "ናይ ስድራ ቤት ጉዳያትን ኩነታት ውልቃዊ ርክባትን ብሙያዊነትን ጥንቃቐን ምሕደር።",
+  },
+  "employment-labor": {
+    title: "ናይ ስራሕን ሰብ ሞያን ሕጊ",
+    description: "ኣብ ናይ ስራሕ ርክባት፣ ናይ ቦታ ግርጭታትን ጉዳያት ሰብ ሞያን ምኽርን ውክልናን።",
+  },
+  "criminal-defense": {
+    title: "ናይ ገበን ምክልኻል",
+    description: "ኣብ ኩሎም ደረጃታት ናይ ገበን መስርሕ ሕጋዊ ውክልናን ምክልኻልን።",
+  },
+  "administrative-regulatory": {
+    title: "ኣድራሳዊን ቁጽጽራዊን ሕጊ",
+    description: "ኣብ ቅድሚ መንግስታዊ ኣካላትን ኣብ ቁጽጽራዊ ጉዳያትን ውክልናን ምኽርን።",
+  },
+  "immigration-nationality": {
+    title: "ውሑድነትን ዜግነትን",
+    description: "ኣብ ውሑድነት፣ ነባራዊ መንበሪ፣ ዜግነትን ዝተኣሳሰሩ ጉዳያትን ሕጋዊ ደገፍ።",
+  },
+  "dispute-resolution": {
+    title: "ኣማራጺ ናይ ግርጭት ፍታሕ",
+    description: "ናይ ምዝርራብ፣ ማእኸላይነት፣ ኣርብነትን ካልኦት ኣማራጽታት ፍታሕን ምቕራብ።",
+  },
+};
+
+const TI_TERMS: Record<string, string> = {
+  "Corporate Law": "ኮርፖሬት ሕጊ",
+  "Civil Litigation": "ሲቪላዊ ፍርዳዊ ጉዳያት",
+  "Contract Law": "ናይ ውዕል ሕጊ",
+  "Family Law": "ናይ ስድራ ቤት ሕጊ",
+  "Employment & Labor": "ስራሕን ሰብ ሞያን",
+  "Property Law": "ናይ ንብረት ሕጊ",
+  "Criminal Defense": "ናይ ገበን ምክልኻል",
+  "Administrative Law": "ኣድራሳዊ ሕጊ",
+  Immigration: "ውሑድነት",
+  Amharic: "ኣምሓርኛ",
+  English: "እንግሊዝኛ",
+  Tigrinya: "ትግርኛ",
+  "Afaan Oromo": "ኣፋን ኦሮሞ",
+  "Mandarin Chinese": "መንዳሪን ቻይንኛ",
+  "Ethiopian Federal Advocates Association": "ናይ ኢትዮጵያ ፌዴራላዊ ማሕበር ኣበያቲ ሕጊ",
+  "Ethiopian Arbitration Institute": "ናይ ኢትዮጵያ ናይ ኣርብነት ትካል",
+  "Ethiopian Women Lawyers Association": "ናይ ኢትዮጵያ ማሕበር ኣንስቲ ኣበያቲ ሕጊ",
+};
+
+const TI_LAWYERS: Record<string, Partial<Lawyer>> = {
+  "araya-kebede": {
+    name: "ኣራያ ከበደ",
+    role: "ኣቦ መንበር ሽራኽ",
+    qualifications:
+      "ባችለር ኦፍ ሎው፣ ማስተር ኦፍ ሎው (ንግዳዊ ሕጊ)፣ ኣብ ፌዴራላዊ ቤት ፍርዲ ዝተፈቕደ ኣበኛ",
+    bio: "ኣራያ ነዚ ቤት ጽሕፈት ዘቛመ እብ 20 ዓመታት ኣብ ሲቪላዊ ፍርዳዊ ጉዳያትን ናይ ኩባንያታት ኣማኻርነትን ምስ ሰርሐ እዩ፤ ንውሽጣውን ኣህጉራውን ዓሚላት ኣብ ፌዴራላዊ ቤት ፍርዲ ኢትዮጵያ ይወክል።",
+    education: [
+      "ናይ ኣዲስ ኣበባ ዩኒቨርሲቲ ማስተር ኦፍ ሎው ንግዳዊ ሕጊ",
+      "ናይ ኣዲስ ኣበባ ዩኒቨርሲቲ ኮሌጅ ሕጊ ባችለር ኦፍ ሎው",
+    ],
+    experience: [
+      "ካብ 20 ዓመታት ንላዕሊ ኣብ ፍርዲን ናይ ኩባንያ ኣማኻርነትን ልምዲ",
+      "ኣብ ዝተሓላለኹ ናይ ንግዲ ግርጭታትን ኣርብነትን ቀንዲ ወካሊ",
+      "ንኩባንያታት ኣብ ምቛም፣ ምሕደራን ሕጋዊ ምትእስሳርን ከም ኣማኻሪ",
+    ],
+  },
+  "selamawit-bekele": {
+    name: "ሰላማዊት በቀለ",
+    role: "ከቢድ ኣበኛ",
+    qualifications:
+      "ባችለር ኦፍ ሎው፣ ማስተር ኦፍ ሎው (ናይ ሰብኣዊ መሰላት ሕጊ)፣ ዝተመዝገበት ማእኸላይት",
+    bio: "ሰላማዊት ንውልቀ ሰባትን ንወሃብቲ ስራሕን ተነከርቲ ናይ ስድራ ቤት፣ ስራሕን ንብረትን ጉዳያት ብጥንቃቐን ብዝርዝር ዘተን ትሕዝ።",
+    education: [
+      "ናይ ፕሪቶርያ ዩኒቨርሲቲ ማስተር ኦፍ ሎው ናይ ሰብኣዊ መሰላት ሕጊ",
+      "ናይ ባህር ዳር ዩኒቨርሲቲ ባችለር ኦፍ ሎው",
+    ],
+    experience: [
+      "12 ዓመታት ንወሃብቲ ስራሕን ሰራሕተኛታትን ናይ ስራሕ ግርጭታት ምሕደር",
+      "ኣብ ስድራ ቤትን ንብረትን ጉዳያት ሰፊሕ ናይ ማእኸላይነት ተመክሮ",
+    ],
+  },
+  "chen-wei": {
+    name: "ቼን ዌይ (陈伟)",
+    role: "ሓጋዚ ኣበኛ",
+    qualifications: "ባችለር ኦፍ ሎው፣ ማስተር ኦፍ ሎው፣ ናይ ሕጊ ልምምድን መስርሕን ምስክር ወረቐት",
+    bio: "ቼን ዌይ ኣብ ገበናዊ መስርሕን ቁጽጽራዊ ጉዳያትን ይወክል፤ ናይ ውሑድነት፣ ነባራዊ መንበርን ዜግነትን ኣመልኪትታት የካይድ፣ ብፍላይ ድማ ንቻይንኛ ተዛረብቲ ዓሚላትን ኣብ ኢትዮጵያ ንዘለዉ ቻይናዊ ትካላትን።",
+    education: [
+      "ናይ ቻይና ዩኒቨርሲቲ ናይ ፖለቲካ ሳይንስን ሕግን ማስተር ኦፍ ሎው",
+      "ናይ ኣዲስ ኣበባ ዩኒቨርሲቲ ኮሌጅ ሕጊ ባችለር ኦፍ ሎው",
+    ],
+    experience: [
+      "ኣብ ቀዳማይን ምዃነ-ጸባብን ደረጃ ናይ ገበን ምክልኻል ውክልና",
+      "ኣብ ቅድሚ ኣመራሕቲ ኣካላት ቁጽጽራዊ ውክልና",
+      "ንቻይናዊ ትካላት ናይ ውሑድነት፣ መንበርን ሕጋዊ ምትእስሳርን ኣማኻሪ",
+    ],
+  },
+};
+
+const TI_FAQS: { q: string; a: string }[] = [
+  {
+    q: "ናይ ምኽክር ቆጸራ ብኸመይ እየ ዝሕዝ?",
+    a: "ብመስመር ላዕሊ ብዘሎ ናይ ቆጸራ ቅጺ ክትሕዙ፣ ብቐጥታ ክትድውሉ፣ ወይ ብዋትስአፕ ክትሰዱ ትኽእሉ። ነፍሲ ወከፍ ቆጸራ ብስልኪ ወይ ብኢመይል የረጋግጾ።",
+  },
+  {
+    q: "ዋጋ ናይ ምኽክር ክንደይ እዩ?",
+    a: "ናይ መጀመርታ ምኽክር ብዝተወሰነ ሞያዊ ክፍሊት እዩ ዝወሃብ፤ እቲ ዋጋ ቆጸራ ቅድሚ ምርግጋጹ ይፍለጥ። ንቕጻሊ ስራሕ ግን ድሕሪ ስፍሓት ስራሕ ምግምጋም ዋጋ ይወሃብ።",
+  },
+  {
+    q: "ኣብ ምኽክር እንታይ ሰነዳት ከምጽእ ኣለኒ?",
+    a: "ስምምዓት፣ ደብዳቤታት፣ ናይ ቤት ፍርዲ ሰነዳት፣ ደረኽቲ ወይ ናይ መንነት መረጋገጺ ሰነዳት ካብ ጉዳይኩም ምስ ዝምደዱ ኣምጽኡ። እንተ ዘይኣማመንኩም ኩሎም ኣምጽኡ፣ ኣገደስቲ ዝኾኑ ንሕና ንመርምር።",
+  },
+  {
+    q: "ናይ መስመር ላዕሊ ምኽክር ተዳልዩዶ?",
+    a: "እወ። ኣብ ኢትዮጵያን ኣብ ወጻኢን ንዘለዉ ዓሚላት ኣብ ቤት ጽሕፈት፣ ብስልኪ፣ ብቪድዮ ወይ ብጽሑፍ ምኽክር ንህብ።",
+  },
+  {
+    q: "ናይ ዓሚል ሓበሬታ ብኸመይ ይሕሎ?",
+    a: "ኩሉ ርክብ ብሞያዊ ምስጢራውነት ይሕሎ። ሰነዳት ብውሑስ መንገዲ ይቐርቡ፣ ናብ ጉዳይኩም ዘለዎም ሞያውያን ጥራይ ድማ ይበጽሑ።",
+  },
+  {
+    q: "ካብ ኣዲስ ኣበባ ወጻኢ ዘለዉ ዓሚላት ትወክሉዶ?",
+    a: "እወ። ኣብ ኩሎም ዞባታት ኢትዮጵያ ኣብ ቤት ፍርዲ ንወክል፣ ኣድላዪ እንተኾይኑ ድማ ምስ ከባቢያዊ ኣበያቲ ሕጊ ንሰርሕ።",
+  },
+  {
+    q: "ሕጋዊ ጉዳይ ብተለምዶ ክንደይ ግዜ ይወስድ?",
+    a: "ግዜውን ኣብቲ ዝካየደሉ ኣካል፣ ኣብ ሕልኽለኽነት ጉዳይን ኣብ ምትሕብባር ካልኣይ ወገንን ይምርኮስ። ኣብ መጀመርታ ተግባራዊ ግምት ንህብ፣ ምስ ምዕባለ ድማ ነመሓድረኩም።",
+  },
+];
+
+const TI_WHY_US: Record<string, { title: string; text: string }> = {
+  "01": {
+    title: "ብልሙዳት ሞያዊ ናይ ሕጊ ኣባላት",
+    text: "ድልዱል ናይ ሕጊ መሰረትን ሰፊሕ ናይ ቤት ፍርዲ ተመክሮን ዘለዎም ኣበያቲ ሕጊ።",
+  },
+  "02": {
+    title: "ብኩነታት ዝተዳለወ ናይ ሕጊ ሜላ",
+    text: "ነፍሲ ወከፍ ጉዳይ ኣብ ናይ ገዛእ ርእሱ ኩነታት ዝተመርኮሰ ፍሉይ መደብ ኣለዎ።",
+  },
+  "03": {
+    title: "ምስጢራውነትን ጥንቃቐን",
+    text: "ተነከርቲ ሓበሬታታት ዓሚላት ብሞያዊ ምስጢራውነት ብትሪ ንሕሉ።",
+  },
+  "04": {
+    title: "ግሉጽ መረዳእታ",
+    text: "ናይ ሕጊ ጉዳያት፣ ሓደጋታትን ኣማራጽታትን ብቐሊል ቋንቋ ነብርህ።",
+  },
+  "05": {
+    title: "ብውጽኢት ዝተመርኮሰ",
+    text: "ተግባራዊ፣ ንንግዲ ዝሰማማዕን ብሕጊ ድሙቕን ፍታሕ ንደሊ።",
+  },
+  "06": {
+    title: "ሞያዊ ስነ ምግባር",
+    text: "ቅንነትን ሞያዊ ሓላፍነትን ኣብ ኩሉ ስራሕና መሰረት እዩ።",
+  },
+};
+
+const TI_CORE_VALUES: Record<string, { title: string; text: string }> = {
+  Integrity: { title: "ቅንነት", text: "ኣብ ኩሉ ውክልና ልዑል ናይ ሞያ ስነ ምግባር ንሕሉ።" },
+  Confidentiality: {
+    title: "ምስጢራውነት",
+    text: "ናይ ዓሚል ሓበሬታን ርክባትን ብትሪ ብምስጢር ይሕሉ።",
+  },
+  Excellence: {
+    title: "ጽሬት",
+    text: "ዘይተሓታተሊ ናይ ሕጊ ትንተናን ብጥንቃቐ ዝተገብረ ውክልናን ንደሊ።",
+  },
+  "Client Focus": {
+    title: "ኣብ ዓሚል ዘተኮረ",
+    text: "ናይ ሕጊ ሜላ ኣብ ናይ ነፍሲ ወከፍ ዓሚል ውሽጣዊ ኩነታት ዝተመርኮረ።",
+  },
+  Accountability: {
+    title: "ሓላፍነት",
+    text: "ንምኽርና፣ ንግብርናን ንሞያዊ ቃልናን ሓላፍነት ንወስድ።",
+  },
+};
+
+const TI_FIRM = {
+  name: "ኣራያ ቤት ጽሕፈት ሕጊ",
+  tagline: "ፍትሒ። ቅንነት። ውጽኢት።",
+  address: "ኢትዮጵያ፣ ኣዲስ ኣበባ፣ ንኡስ ከተማ ቦሌ፣ ወረዳ 13፣ ኢምፐሪያል ሳሚ ህንጻ፣ 5ይ ደርቢ",
+  hours: "ሰኑይ–ዓርቢ 8:30 – 17:30 · ብቀዳም ብቆጸራ ጥራይ",
+};
+
+const tiTerm = (s: string) => TI_TERMS[s] ?? s;
+
 export function usePracticeAreas(): PracticeArea[] {
   const { lang } = useLang();
-  if (lang !== "zh") return PRACTICE_AREAS;
-  return PRACTICE_AREAS.map((a) => ({ ...a, ...(ZH_PRACTICE[a.slug] ?? {}) }));
+  const map = lang === "zh" ? ZH_PRACTICE : lang === "ti" ? TI_PRACTICE : null;
+  if (!map) return PRACTICE_AREAS;
+  return PRACTICE_AREAS.map((a) => ({ ...a, ...(map[a.slug] ?? {}) }));
 }
 
 export function useLawyers(): Lawyer[] {
   const { lang } = useLang();
-  if (lang !== "zh") return LAWYERS;
+  if (lang !== "zh" && lang !== "ti") return LAWYERS;
+  const pack = lang === "zh" ? ZH_LAWYERS : TI_LAWYERS;
+  const term = lang === "zh" ? zhTerm : tiTerm;
   return LAWYERS.map((l) => ({
     ...l,
-    ...(ZH_LAWYERS[l.slug] ?? {}),
-    practice: l.practice.map(zhTerm),
-    memberships: l.memberships.map(zhTerm),
-    languages: l.languages.map(zhTerm),
+    ...(pack[l.slug] ?? {}),
+    practice: l.practice.map(term),
+    memberships: l.memberships.map(term),
+    languages: l.languages.map(term),
   }));
 }
 
 export function useFaqs() {
   const { lang } = useLang();
-  return lang === "zh" ? ZH_FAQS : FAQS;
+  if (lang === "zh") return ZH_FAQS;
+  if (lang === "ti") return TI_FAQS;
+  return FAQS;
 }
 
 export function useWhyUs() {
   const { lang } = useLang();
-  if (lang !== "zh") return WHY_US;
-  return WHY_US.map((w) => ({ ...w, ...(ZH_WHY_US[w.n] ?? {}) }));
+  const map = lang === "zh" ? ZH_WHY_US : lang === "ti" ? TI_WHY_US : null;
+  if (!map) return WHY_US;
+  return WHY_US.map((w) => ({ ...w, ...(map[w.n] ?? {}) }));
 }
 
 export function useCoreValues() {
   const { lang } = useLang();
-  if (lang !== "zh") return CORE_VALUES;
-  return CORE_VALUES.map((v) => ({ ...v, ...(ZH_CORE_VALUES[v.title] ?? {}) }));
+  const map = lang === "zh" ? ZH_CORE_VALUES : lang === "ti" ? TI_CORE_VALUES : null;
+  if (!map) return CORE_VALUES;
+  return CORE_VALUES.map((v) => ({ ...v, ...(map[v.title] ?? {}) }));
 }
 
 export function useFirm() {
   const { lang } = useLang();
-  return lang === "zh" ? { ...FIRM, ...ZH_FIRM } : FIRM;
+  if (lang === "zh") return { ...FIRM, ...ZH_FIRM };
+  if (lang === "ti") return { ...FIRM, ...TI_FIRM };
+  return FIRM;
 }
 
 /** Section copy that lives in page components. */
@@ -360,6 +572,61 @@ export const COPY = {
     "contact.hours": "办公时间",
     "contact.whatsapp": "通过 WhatsApp 咨询",
   },
+  ti: {
+    "practice.eyebrow": "ዓውድታት ሞያ",
+    "services.eyebrow": "ኣገልግሎታትና",
+    "services.title": "ናይ ሕጊ ኣገልግሎታትን ምቕራብ ጉዳያትን",
+    "services.lead":
+      "ስለ ጉዳይኩም ዝሰማማዕ ዓውዲ ሞያ ምረጹ እሞ ጉዳይኩም ብመስመር ላዕሊ ኣቕርቡ። ኣባል ሕጋዊ ጋንታና ከጽንዎ እዩ፣ ድማ ክምልሰልኩም እዩ።",
+    "case.eyebrow": "ጉዳይኩም ኣቕርቡ",
+    "case.title": "ስለ ጉዳይኩም ንገሩና",
+    "case.lead":
+      "ኣገደስቲ ሓበሬታ ናይ ኩነታትኩም ኣካፍሉና። ዝኣመጻእኩምዎ ብምስጢር ክንገምግሞ ኢና፣ ብዛዕባ ዝቕጽል ስጉምቲ ድማ ክንረኽበኩም ኢና።",
+    "case.disclaimer":
+      "እዚ ቅጽ ምምላእ ናይ ኣበኛ-ዓሚል ርክብ ኣይፈጥርን። ስምምዕ ቅድሚ ምርግጋጹ ኣዝዮም ተነከርቲ ዝኾኑ ሓበሬታታት ከይትሰዱ ንምነይና።",
+    "case.name": "ምሉእ ስም",
+    "case.phone": "ቁጽሪ ስልኪ",
+    "case.email": "ኢመይል",
+    "case.service": "ዓውዲ ሞያ",
+    "case.servicePlaceholder": "ዓውዲ ሞያ ምረጹ",
+    "case.matter": "ጉዳይኩም ግለጹ",
+    "case.matterPlaceholder":
+      "እንታይ ከም ዘጋጠመን እንታይ ውጽኢት ከም እትደልዩ ብሓጺሩ ግለጹ።",
+    "case.submit": "ጉዳይ ኣቕርቡ",
+    "case.error": "በጃኹም እዚ ሳንዱቕ ኣረጋግጹ",
+    "case.toastTitle": "ጉዳይ ቀሪቡ ኣሎ",
+    "case.toastDesc":
+      "የቐንየልናኹም። ሕጋዊ ጋንታና ዝኣመጻእኩምዎ ተቐቢልዎ ኣሎ፣ ብቕልጡፍ ክረኽበኩም እዩ።",
+    "faq.eyebrow": "ተደጋጋሚ ሕቶታት",
+    "faq.title": "ብተደጋጋሚ ዝሕተቱ ሕቶታት",
+    "faq.lead": "ዓሚላት ብተደጋጋሚ ንዝሓቱዎም ሕቶታት ቀጥታዊ መልሲ።",
+    "why.eyebrow": "ለምንታይ ኣራያ ቤት ጽሕፈት ሕጊ",
+    "why.title": "ዓሚላት ስለምንታይ የምንኡና",
+    "why.lead":
+      "ንዝወሃበና ውክልና ብስርዓት፣ ብምስጢርን ብግሉጽ መረዳእታን ዝተሰነየ ኣቀራርባ።",
+    "team.requestAdvice": "ምኽሪ ሕተቱ",
+    "team.practice": "ዓውድታት ሞያ",
+    "team.education": "ትምህርቲ",
+    "team.experience": "ልምዲ",
+    "team.memberships": "ሞያዊ ኣባልነት",
+    "team.languages": "ቋንቋታት",
+    "team.qualifications": "ብቕዓታት",
+    "team.viewProfile": "መግለጺ ርአዩ",
+    "team.contact": "ኣበኛ ሕጊ ርኸቡ",
+    "about.mission": "ዕላማ",
+    "about.missionText":
+      "መሰላትን ረብሓታትን ዓሚላትና ብምጥባቕ ኣተኣማማኒ፣ ምግባራውን ሓያልን ናይ ሕጊ ኣገልግሎት ምሃብ።",
+    "about.vision": "ርኢይ",
+    "about.visionText":
+      "ብሞያውነት፣ ብቅንነትን ብተሳካዕ ውክልናን ዝፍለጥ ኣተኣማማኒን ዝኽበርን ናይ ሕጊ ኣገልግሎት ኣዳላዊ ምዃን።",
+    "about.values": "መሰረታዊ ዋጋታት",
+    "about.valuesTitle": "ሰራሕና ዘመርሑ ዋጋታት",
+    "contact.telephone": "ስልኪ",
+    "contact.email": "ኢመይል",
+    "contact.office": "ቤት ጽሕፈት",
+    "contact.hours": "ሰዓት ስራሕ",
+    "contact.whatsapp": "ብWhatsApp ኣዕልሉ",
+  },
 } as const;
 
 export function useCopy() {
@@ -369,7 +636,7 @@ export function useCopy() {
 
 type Para = { label?: string; text: string };
 
-const ABOUT_BODY: Record<"en" | "am" | "zh", Para[]> = {
+const ABOUT_BODY: Record<"en" | "am" | "zh" | "ti", Para[]> = {
   en: [
     {
       text: "Araya Law Firm was established in Addis Ababa to serve clients who need dependable legal counsel delivered with clarity and discretion. What began as a litigation-focused practice has grown into a full-service office covering civil, corporate, regulatory, and personal legal matters.",
@@ -421,6 +688,31 @@ const ABOUT_BODY: Record<"en" | "am" | "zh", Para[]> = {
     {
       label: "经验与资历。",
       text: "团队成员拥有法学学士与法学硕士学历、注册调解培训资质，以及在国内与跨境事务中累积数十年的庭审与顾问经验。",
+    },
+  ],
+  ti: [
+    {
+      text: "ኣራያ ቤት ጽሕፈት ሕጊ ኣብ ኣዲስ ኣበባ፣ ብግሉጽነትን ብጥንቃቐን ዝተሰነየ ኣተኣማማኒ ናይ ሕጊ ምኽሪ ንደሊ ዓሚላት ንምሕጋዝ ተቛሚኑ። ካብ ፍርዳዊ ጉዳያት ከም ዝጀመረ እዚ ቤት ጽሕፈት ሕጂ ናብ ሲቪላዊ፣ ኮርፖሬት፣ ቁጽጽራዊን ውልቃዊን ሕጋዊ ጉዳያት ዘጠቓልል ምሉእ ኣገልግሎት በጺሑ ኣሎ።",
+    },
+    {
+      label: "ናይ ሕጊ ፍልስፍና።",
+      text: "ጽቡቕ ናይ ሕጊ ስራሕ ብምስማዕ እዩ ዝጅምር ንብል። ሓደ ኣንፈት ቅድሚ ምምዓጻና፣ እቲ ዓሚል ብሓቂ ዝደልዮ ናይ ንግዲ ወይ ናይ ውልቂ ውጽኢት ነረጋግጽ፣ ድሕሪኡ ናብኡ ዘብጽሕ ሓጺርን ብሕጊ ድሙቕን መንገዲ ንዳሉ — እዚ ድማ ምዝርራብ፣ ማእኸላይነት ወይ ፍርዲ ክኸውን ይኽእል።",
+    },
+    {
+      label: "ዓውድታት ሙካርነት።",
+      text: "ሲቪላዊ ፍርዳዊ ጉዳያት፣ ኮርፖሬትን ንግድን ሕጊ፣ ውዕላት፣ ንብረትን ምድርን፣ ናይ ስድራ ቤት ሕጊ፣ ስራሕን ሰብ ሞያን፣ ናይ ገበን ምክልኻል፣ ኣድራሳዊን ቁጽጽራዊን ስራሕ፣ ውሑድነትን ዜግነትን፣ ከምኡውን ኣማራጺ ናይ ግርጭት ፍታሕ።",
+    },
+    {
+      label: "ንዓሚላት ዝተኣሳሰረ ሓላፍነት።",
+      text: "ነፍሲ ወከፍ ዓሚል ዝፍለጥ ኣበኛ፣ ተግባራዊ ግዜ ሰንጠረዥ፣ ግሉጽ ክፍሊትን ብቐሊል ቋንቋ ዝቐረበ ሓበሬታን ይረክብ። ተነከርቲ ጉዳያት ብውሑድ ጋንታ ከም ዘድሊ ጥራይ ይሕዙ።",
+    },
+    {
+      label: "ሞያዊ ደረጃታት።",
+      text: "ኣበያቲ ሕግና ኣብ ፌዴራላዊ ቤት ፍርዲ ኢትዮጵያ ክርከቡ ዝተፈቕደ ኮይኖም፣ ብመሰረት ናይ ኢትዮጵያ ናይ ሕጊ ማሕበር ሞያዊን ስነ ምግባራዊን ግዴታታት ይሰርሑ — ሓያል ምስጢራውነትን ናይ ውጥረት ኩነታት ምርመራን ሓዊሱ።",
+    },
+    {
+      label: "ተመክሮን ብቕዓታትን።",
+      text: "እቲ ጋንታ ናይ ሕጊ ዲግሪን ማስተርስን ብቕዓታት፣ ዝተረጋገጸ ናይ ማእኸላይነት ስልጠና፣ ከምኡውን ኣብ ውሽጣውን ኣህጉራውን ጉዳያት ዝተኣከበ ዓሰርተታት ዓመታት ናይ ቤት ፍርዲን ኣማኻርነትን ልምዲ የዋሃህድ።",
     },
   ],
 };
