@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from "react";
 
-type Lang = "en" | "am" | "zh";
+export type Lang = "en" | "am" | "zh" | "ti";
 
 const DICT = {
   en: {
@@ -113,6 +113,40 @@ const DICT = {
     "footer.copyright": "© 2026 阿拉亚律师事务所。保留所有权利。",
     "footer.notice": "本网站信息仅供参考，不构成法律建议。",
   },
+  ti: {
+    "nav.home": "መበገሲ",
+    "nav.about": "ብዛዕባና",
+    "nav.practice": "ዓውድታት ሞያ",
+    "nav.services": "ኣገልግሎታት",
+    "nav.team": "ጋንታና",
+    "nav.insights": "ጽሑፋት",
+    "nav.contact": "ርኸቡና",
+    "cta.book": "ቆጸራ ምኽክር ሕዙ",
+    "cta.bookLong": "ንምኽክር ቆጸራ ሕዙ",
+    "cta.practice": "ዓውድታት ሞያና",
+    "hero.firm": "ኣራያ ቤት ጽሕፈት ሕጊ",
+    "hero.tagline": "ፍትሒ። ቅንነት። ውጽኢት።",
+    "hero.lead":
+      "ንውልቀ ሰባት፣ ንንግዳዊ ትካላትን ንመኹላትን ዝተዳለወ ሞያዊ ናይ ሕጊ ውክልናን ኣተኣማማኒ ናይ ሕጊ ኣማኻሪ ኣገልግሎትን።",
+    "hero.trust": "ምስጢራውነት • ሞያውነት • ኣብ ዓሚል ዘተኮረ ውክልና",
+    "stats.years": "ዓመታት ልምዲ",
+    "stats.cases": "ዝተሓዙ ጉዳያት",
+    "stats.areas": "ዓውድታት ሞያ",
+    "stats.langs": "ዝንገሩ ቋንቋታት",
+    "footer.tagline": "ኽትኣምንዎ እትኽእሉ ሞያዊ ናይ ሕጊ ኣገልግሎት።",
+    "menu": "መርሒ",
+    "portal": "ናይ ዓሚል ፖርታል",
+    "attorneys": "ኣበያቲ ሕግን ናይ ሕጊ ኣማኸርትን",
+    "footer.navigation": "ዝርዝር ገጻት",
+    "footer.legal": "ሕጋዊ",
+    "footer.contact": "ርኸቡና",
+    "footer.privacy": "ናይ ውልቃውነት ፖሊሲ",
+    "footer.terms": "ኩነታት ኣጠቓቕማ",
+    "footer.disclaimer": "መግለጺ",
+    "footer.confidentiality": "ናይ ምስጢራውነት ፖሊሲ",
+    "footer.copyright": "© 2026 ኣራያ ቤት ጽሕፈት ሕጊ። ኩሎም መሰላት ዝተሓለዉ እዮም።",
+    "footer.notice": "ኣብዚ ወድብሓብሊት ዘሎ ሓበሬታ ሓፈሻዊ ኮይኑ ናይ ሕጊ ምኽሪ ኣይኮነን።",
+  },
 } as const;
 
 type Key = keyof (typeof DICT)["en"];
@@ -128,7 +162,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved === "en" || saved === "am" || saved === "zh") setLangState(saved);
+    if (saved === "en" || saved === "am" || saved === "zh" || saved === "ti") setLangState(saved);
   }, []);
 
   const setLang = useCallback((l: Lang) => {
