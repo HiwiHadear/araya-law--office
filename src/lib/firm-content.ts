@@ -572,6 +572,61 @@ export const COPY = {
     "contact.hours": "办公时间",
     "contact.whatsapp": "通过 WhatsApp 咨询",
   },
+  ti: {
+    "practice.eyebrow": "ዓውድታት ሞያ",
+    "services.eyebrow": "ኣገልግሎታትና",
+    "services.title": "ናይ ሕጊ ኣገልግሎታትን ምቕራብ ጉዳያትን",
+    "services.lead":
+      "ስለ ጉዳይኩም ዝሰማማዕ ዓውዲ ሞያ ምረጹ እሞ ጉዳይኩም ብመስመር ላዕሊ ኣቕርቡ። ኣባል ሕጋዊ ጋንታና ከጽንዎ እዩ፣ ድማ ክምልሰልኩም እዩ።",
+    "case.eyebrow": "ጉዳይኩም ኣቕርቡ",
+    "case.title": "ስለ ጉዳይኩም ንገሩና",
+    "case.lead":
+      "ኣገደስቲ ሓበሬታ ናይ ኩነታትኩም ኣካፍሉና። ዝኣመጻእኩምዎ ብምስጢር ክንገምግሞ ኢና፣ ብዛዕባ ዝቕጽል ስጉምቲ ድማ ክንረኽበኩም ኢና።",
+    "case.disclaimer":
+      "እዚ ቅጽ ምምላእ ናይ ኣበኛ-ዓሚል ርክብ ኣይፈጥርን። ስምምዕ ቅድሚ ምርግጋጹ ኣዝዮም ተነከርቲ ዝኾኑ ሓበሬታታት ከይትሰዱ ንምነይና።",
+    "case.name": "ምሉእ ስም",
+    "case.phone": "ቁጽሪ ስልኪ",
+    "case.email": "ኢመይል",
+    "case.service": "ዓውዲ ሞያ",
+    "case.servicePlaceholder": "ዓውዲ ሞያ ምረጹ",
+    "case.matter": "ጉዳይኩም ግለጹ",
+    "case.matterPlaceholder":
+      "እንታይ ከም ዘጋጠመን እንታይ ውጽኢት ከም እትደልዩ ብሓጺሩ ግለጹ።",
+    "case.submit": "ጉዳይ ኣቕርቡ",
+    "case.error": "በጃኹም እዚ ሳንዱቕ ኣረጋግጹ",
+    "case.toastTitle": "ጉዳይ ቀሪቡ ኣሎ",
+    "case.toastDesc":
+      "የቐንየልናኹም። ሕጋዊ ጋንታና ዝኣመጻእኩምዎ ተቐቢልዎ ኣሎ፣ ብቕልጡፍ ክረኽበኩም እዩ።",
+    "faq.eyebrow": "ተደጋጋሚ ሕቶታት",
+    "faq.title": "ብተደጋጋሚ ዝሕተቱ ሕቶታት",
+    "faq.lead": "ዓሚላት ብተደጋጋሚ ንዝሓቱዎም ሕቶታት ቀጥታዊ መልሲ።",
+    "why.eyebrow": "ለምንታይ ኣራያ ቤት ጽሕፈት ሕጊ",
+    "why.title": "ዓሚላት ስለምንታይ የምንኡና",
+    "why.lead":
+      "ንዝወሃበና ውክልና ብስርዓት፣ ብምስጢርን ብግሉጽ መረዳእታን ዝተሰነየ ኣቀራርባ።",
+    "team.requestAdvice": "ምኽሪ ሕተቱ",
+    "team.practice": "ዓውድታት ሞያ",
+    "team.education": "ትምህርቲ",
+    "team.experience": "ልምዲ",
+    "team.memberships": "ሞያዊ ኣባልነት",
+    "team.languages": "ቋንቋታት",
+    "team.qualifications": "ብቕዓታት",
+    "team.viewProfile": "መግለጺ ርአዩ",
+    "team.contact": "ኣበኛ ሕጊ ርኸቡ",
+    "about.mission": "ዕላማ",
+    "about.missionText":
+      "መሰላትን ረብሓታትን ዓሚላትና ብምጥባቕ ኣተኣማማኒ፣ ምግባራውን ሓያልን ናይ ሕጊ ኣገልግሎት ምሃብ።",
+    "about.vision": "ርኢይ",
+    "about.visionText":
+      "ብሞያውነት፣ ብቅንነትን ብተሳካዕ ውክልናን ዝፍለጥ ኣተኣማማኒን ዝኽበርን ናይ ሕጊ ኣገልግሎት ኣዳላዊ ምዃን።",
+    "about.values": "መሰረታዊ ዋጋታት",
+    "about.valuesTitle": "ሰራሕና ዘመርሑ ዋጋታት",
+    "contact.telephone": "ስልኪ",
+    "contact.email": "ኢመይል",
+    "contact.office": "ቤት ጽሕፈት",
+    "contact.hours": "ሰዓት ስራሕ",
+    "contact.whatsapp": "ብWhatsApp ኣዕልሉ",
+  },
 } as const;
 
 export function useCopy() {
@@ -581,7 +636,7 @@ export function useCopy() {
 
 type Para = { label?: string; text: string };
 
-const ABOUT_BODY: Record<"en" | "am" | "zh", Para[]> = {
+const ABOUT_BODY: Record<"en" | "am" | "zh" | "ti", Para[]> = {
   en: [
     {
       text: "Araya Law Firm was established in Addis Ababa to serve clients who need dependable legal counsel delivered with clarity and discretion. What began as a litigation-focused practice has grown into a full-service office covering civil, corporate, regulatory, and personal legal matters.",
