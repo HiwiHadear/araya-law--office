@@ -9,13 +9,14 @@ const DraftInput = z.object({
   court: z.string().max(160).nullable(),
   status: z.string().max(40),
   keyPoints: z.string().min(3).max(1200),
-  language: z.enum(["en", "am", "zh"]).default("en"),
+  language: z.enum(["en", "am", "zh", "ti"]).default("en"),
 });
 
 const LANGUAGE_LABEL = {
   en: "English",
   am: "Amharic",
   zh: "Simplified Chinese",
+  ti: "Tigrinya",
 } as const;
 
 export const draftCaseNote = createServerFn({ method: "POST" })

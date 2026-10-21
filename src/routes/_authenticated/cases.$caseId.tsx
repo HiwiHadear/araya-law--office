@@ -47,7 +47,7 @@ export const Route = createFileRoute("/_authenticated/cases/$caseId")({
   component: CaseDetail,
 });
 
-type AiLanguage = "en" | "am" | "zh";
+type AiLanguage = "en" | "am" | "zh" | "ti";
 
 function CaseDetail() {
   const { caseId } = Route.useParams();
@@ -316,6 +316,7 @@ function CaseDetail() {
                     <SelectItem value="en">English</SelectItem>
                     <SelectItem value="am">አማርኛ</SelectItem>
                     <SelectItem value="zh">中文</SelectItem>
+                    <SelectItem value="ti">ትግርኛ</SelectItem>
                   </SelectContent>
                 </Select>
                 <Button
