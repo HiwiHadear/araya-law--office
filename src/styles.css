@@ -389,3 +389,88 @@
   .content-hover:hover svg,
   .group:hover img { transform: none; }
 }
+
+/* ---------- Scrolling tagline ticker above the header ---------- */
+.ticker {
+  position: relative;
+  overflow: hidden;
+  padding: 0.55rem 0;
+  background-image: linear-gradient(
+    100deg,
+    var(--navy) 0%,
+    color-mix(in oklab, var(--royal) 62%, var(--navy)) 50%,
+    var(--navy) 100%
+  );
+}
+
+/* Fades only the wording into the bar at both ends; the navy itself stays solid. */
+.ticker__fade {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.ticker__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: ticker-scroll var(--ticker-duration, 46s) linear infinite;
+}
+
+/* Four identical copies, so the loop restarts at exactly one copy (-25%). */
+@keyframes ticker-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-25%, 0, 0); }
+}
+
+.ticker:hover .ticker__track,
+.ticker:focus-within .ticker__track {
+  animation-play-state: paused;
+}
+
+.ticker__group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.ticker__mark {
+  flex-shrink: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin: 0 1.85rem;
+  background-color: var(--gold);
+  box-shadow: 0 0 10px color-mix(in oklab, var(--gold) 65%, transparent);
+  transform: rotate(45deg);
+}
+
+.ticker__text {
+  white-space: nowrap;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  background-image: linear-gradient(
+    100deg,
+    color-mix(in oklab, var(--gold) 62%, white) 0%,
+    var(--gold) 22%,
+    color-mix(in oklab, var(--navy-foreground) 30%, var(--gold)) 48%,
+    var(--gold) 70%,
+    color-mix(in oklab, var(--gold) 62%, white) 100%
+  );
+  background-size: 240% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: ticker-shimmer 11s linear infinite;
+}
+
+@keyframes ticker-shimmer {
+  from { background-position: 120% 50%; }
+  to { background-position: -120% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker__track,
+  .ticker__text {
+    animation: none;
+  }
+}
