@@ -27,6 +27,7 @@ const DICT = {
     "hero.lead":
       "Professional legal representation and trusted legal advisory services tailored to individuals, businesses, and organizations.",
     "hero.trust": "Confidentiality • Professionalism • Client-Focused Representation",
+    "ticker.tagline": "Araya Law Firm — Your trusted legal partner, providing strategic legal guidance, professional representation, and practical solutions to protect your rights and advance your interests.",
     "stats.years": "Years of Practice",
     "stats.cases": "Cases Handled",
     "stats.areas": "Practice Areas",
@@ -61,6 +62,7 @@ const DICT = {
     "hero.lead":
       "ለግለሰቦች፣ ለንግድ ድርጅቶችና ለተቋማት የተዘጋጀ ሙያዊ የሕግ ውክልናና አስተማማኝ የሕግ አማካሪ አገልግሎት።",
     "hero.trust": "ምስጢራዊነት • ሙያዊነት • በደንበኛ ላይ ያተኮረ ውክልና",
+    "ticker.tagline": "እራኯ የብድ ይባልድሪ — የቪሯርትን የበህታትነ የብረላ አሳትርል በትግታርግናልግ በታምሊትን ምልንሯታነ ይብዋለልዳታነ ታለሁበታልቤት ብልንርሌታል በምላምናል ታነህህታነ በታረብልዳታነ ደታቃልቻል ብልምከልትነ ይብላለልትን በታለሁበታልቤት ብልንርሌታል ይከትደታልታነ በታልቡህድርልናል ብልከከልታል በታልኛሉታነ ብልሌምታነ ይምሳትርል ብልከከልታል በምለላታትነ ይሯቦታልናል ይብዳህልታነ ዮድሳልልነ",
     "stats.years": "የልምድ ዓመታት",
     "stats.cases": "የተያዙ ጉዳዮች",
     "stats.areas": "የሙያ ዘርፎች",
@@ -95,6 +97,7 @@ const DICT = {
     "hero.lead":
       "为个人、企业和组织提供专业法律代理与值得信赖的法律咨询服务。",
     "hero.trust": "保密性 · 专业性 · 以客户为中心",
+    "ticker.tagline": "阿拉亚律师事务所——您值得信赖的法律伙伴，提供战略性法律指导、专业代理和切实可行的解决方案，以保护您的权益并推进您的利益。",
     "stats.years": "执业年限",
     "stats.cases": "已处理案件",
     "stats.areas": "业务领域",
@@ -129,6 +132,7 @@ const DICT = {
     "hero.lead":
       "ንውልቀ ሰባት፣ ንንግዳዊ ትካላትን ንመኹላትን ዝተዳለወ ሞያዊ ናይ ሕጊ ውክልናን ኣተኣማማኒ ናይ ሕጊ ኣማኻሪ ኣገልግሎትን።",
     "hero.trust": "ምስጢራውነት • ሞያውነት • ኣብ ዓሚል ዘተኮረ ውክልና",
+    "ticker.tagline": "እከትራ በብድ ተቕበታነ ቨቡታነ ተባሊ — እቡ የብልከከታነት አሳትርል በታበታትነት ይብደት ተባሊ በታበታትነት ይከትደታልታነ በታብድ ምታካርታነ ይብላለልትን በታለሁበታልቤት ብልንርሌታል ይከትደታልታነ በታልቡህድርልናል ብልከከልታል ታነህህታነ በታረብልዳታነ ይብዳህልታነ ብልሌምታነ ይምሳትርል ብልከከልታል በምለላታትነ የበታልኛሉታነ የብላለልትነ ብልህምታነ",
     "stats.years": "ዓመታት ልምዲ",
     "stats.cases": "ዝተሓዙ ጉዳያት",
     "stats.areas": "ዓውድታት ሞያ",
