@@ -401,8 +401,12 @@
     color-mix(in oklab, var(--royal) 62%, var(--navy)) 50%,
     var(--navy) 100%
   );
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+/* Fades only the wording into the bar at both ends; the navy itself stays solid. */
+.ticker__fade {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
 }
 
 .ticker__track {
@@ -448,7 +452,7 @@
     100deg,
     color-mix(in oklab, var(--gold) 62%, white) 0%,
     var(--gold) 22%,
-    color-mix(in oklab, var(--navy-foreground) 78%, var(--gold)) 46%,
+    color-mix(in oklab, var(--navy-foreground) 30%, var(--gold)) 48%,
     var(--gold) 70%,
     color-mix(in oklab, var(--gold) 62%, white) 100%
   );

@@ -16,14 +16,22 @@ export function TaglineTicker() {
       className="ticker border-b border-gold/20"
       style={{ "--ticker-duration": duration } as CSSProperties}
     >
-      <div className="ticker__track">
-        {/* Four identical copies; the track shifts by exactly one copy (-25%). */}
-        {[0, 1, 2, 3].map((copy) => (
-          <div key={copy} className="ticker__group" aria-hidden={copy === 0 ? undefined : true}>
-            <span aria-hidden className="ticker__mark" />
-            <span className="ticker__text">{text}</span>
-          </div>
-        ))}
+      {/* The mask lives on this inner layer so the navy bar stays solid while
+          only the wording fades out at each end. */}
+      <div className="ticker__fade">
+        <div className="ticker__track">
+          {/* Four identical copies; the track shifts by exactly one copy (-25%). */}
+          {[0, 1, 2, 3].map((copy) => (
+            <div
+              key={copy}
+              className="ticker__group"
+              aria-hidden={copy === 0 ? undefined : true}
+            >
+              <span aria-hidden className="ticker__mark" />
+              <span className="ticker__text">{text}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
